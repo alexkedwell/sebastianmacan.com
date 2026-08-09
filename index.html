@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Macan — Free Audio Plugins | Chaos, Dusty, Ghost</title>
-<meta name="description" content="Free creative audio plugins (VST3/AU, macOS): Chaos the one-button randomizer, Dusty the lo-fi synth with 30 presets, and Ghost the granular haunted-tape machine.">
+<title>Sebastian Macan — Free Audio Plugins | Chaos, Dusty, Ghost, Sugar, Bounce</title>
+<meta name="description" content="Free creative audio plugins (VST3/AU, macOS): Chaos the one-button randomizer, Dusty the lo-fi synth, Ghost the granular haunted-tape machine, Sugar the shimmer reverb, and Bounce the beat repeater.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228;
     --chaos:#ff3d5a; --chaos2:#7b5cff;
     --dusty:#f5a623; --dusty2:#ff6b9d;
-    --ghost:#39e6d0; --ghost2:#8b5cf6; }
+    --ghost:#39e6d0; --ghost2:#8b5cf6;
+    --sugar:#ff8fc8; --sugar2:#7ef0d4;
+    --bounce:#ff9f1c; --bounce2:#ffe14d; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.6; }
   .wrap { max-width:1060px; margin:0 auto; padding:0 24px; }
@@ -42,6 +44,8 @@
   .plugin.chaos { --g1:var(--chaos); --g2:var(--chaos2); --glow:var(--chaos); --shadow:rgba(255,61,90,.30); }
   .plugin.dusty { --g1:var(--dusty); --g2:var(--dusty2); --glow:var(--dusty); --shadow:rgba(245,166,35,.28); }
   .plugin.ghost { --g1:var(--ghost); --g2:var(--ghost2); --glow:var(--ghost); --shadow:rgba(57,230,208,.25); }
+  .plugin.sugar { --g1:var(--sugar); --g2:var(--sugar2); --glow:var(--sugar); --shadow:rgba(255,143,200,.28); }
+  .plugin.bounce { --g1:var(--bounce); --g2:var(--bounce2); --glow:var(--bounce); --shadow:rgba(255,159,28,.28); }
   .seed { font-family:ui-monospace,Menlo,monospace; background:#1c1c22; border-radius:8px; padding:2px 8px; color:var(--chaos2); }
   .kind { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:14px; font-weight:700; }
   footer { border-top:1px solid var(--line); margin-top:48px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
@@ -62,13 +66,13 @@
 <div class="wrap">
   <header>
     <div class="logo">SEBASTIAN<span>MACAN</span></div>
-    <nav><a href="#chaos">Chaos</a><a href="#dusty">Dusty</a><a href="#ghost">Ghost</a><a href="EULA.txt">License</a></nav>
+    <nav><a href="#chaos">Chaos</a><a href="#dusty">Dusty</a><a href="#ghost">Ghost</a><a href="#sugar">Sugar</a><a href="#bounce">Bounce</a></nav>
   </header>
 
   <section class="hero">
     <div class="badge">Free · VST3 + AU · macOS</div>
     <h1>Plugins that make <em>weird</em> sound good.</h1>
-    <p class="sub">Three free instruments and effects for producers who are bored of clean. Download, drop in your DAW, break something beautiful.</p>
+    <p class="sub">Five free instruments and effects for producers who are bored of clean. Download, drop in your DAW, break something beautiful.</p>
   </section>
 
   <section class="plugin chaos" id="chaos">
@@ -105,6 +109,30 @@
     </ul>
     <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost — Free</a>
     <div class="meta">v1.1 · macOS · VST3 + AU effect</div>
+  </section>
+
+  <section class="plugin sugar" id="sugar">
+    <div class="kind">Shimmer Reverb · Effect</div>
+    <h2>SUGAR</h2>
+    <p class="tag">Turn anything into candy.</p>
+    <p class="desc">A shimmer reverb with a sweet tooth. The giant GLOW knob pushes size, octave-up shimmer and sparkle together — from a gentle sugar dusting to a full glassy cathedral. Pads bloom, vocals halo, plucks turn to stardust.</p>
+    <ul class="feat">
+      <li><b>GLOW</b> — one giant knob</li><li><b>Octave-up shimmer</b> feedback</li><li><b>Sparkle</b> exciter + width</li><li>Soft-clipped — <b>never blows up</b></li>
+    </ul>
+    <a class="dl" href="downloads/Sugar-v1.0-macOS.pkg">Download Sugar — Free</a>
+    <div class="meta">v1.0 · macOS · VST3 + AU effect</div>
+  </section>
+
+  <section class="plugin bounce" id="bounce">
+    <div class="kind">Beat Repeater · Effect</div>
+    <h2>BOUNCE</h2>
+    <p class="tag">Stutter like a bouncing ball.</p>
+    <p class="desc">A tempo-synced beat repeater that grabs a slice of your audio and bounces it — each repeat can fall in pitch and volume like a dropped ball. Smash the TRIGGER pad by hand, or set AUTO loose with a seed and let it glitch your groove reproducibly.</p>
+    <ul class="feat">
+      <li><b>Tempo-synced</b> 1/4 to 1/32</li><li><b>Pitch-fall</b> bounce repeats</li><li><b>AUTO</b> seeded self-glitching</li><li><b>TRIGGER</b> pad performance</li>
+    </ul>
+    <a class="dl" href="downloads/Bounce-v1.0-macOS.pkg">Download Bounce — Free</a>
+    <div class="meta">v1.0 · macOS · VST3 + AU effect</div>
   </section>
 
   <footer>

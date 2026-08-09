@@ -16,7 +16,9 @@
   var ACCENTS = {
     chaos: { g1: "#ff3d5a", g2: "#7b5cff", shadow: "rgba(255,61,90,.35)" },
     dusty: { g1: "#f5a623", g2: "#ff6b9d", shadow: "rgba(245,166,35,.32)" },
-    ghost: { g1: "#39e6d0", g2: "#8b5cf6", shadow: "rgba(57,230,208,.30)" }
+    ghost: { g1: "#39e6d0", g2: "#8b5cf6", shadow: "rgba(57,230,208,.30)" },
+    sugar: { g1: "#ff8fc8", g2: "#7ef0d4", shadow: "rgba(255,143,200,.30)" },
+    bounce: { g1: "#ff9f1c", g2: "#ffe14d", shadow: "rgba(255,159,28,.30)" }
   };
 
   var css = "" +

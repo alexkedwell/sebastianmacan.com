@@ -14,11 +14,22 @@
   var STORAGE_KEY = "sm_email_captured";
 
   var ACCENTS = {
-    chaos: { g1: "#ff3d5a", g2: "#7b5cff", shadow: "rgba(255,61,90,.35)" },
-    dusty: { g1: "#f5a623", g2: "#ff6b9d", shadow: "rgba(245,166,35,.32)" },
-    ghost: { g1: "#39e6d0", g2: "#8b5cf6", shadow: "rgba(57,230,208,.30)" },
-    sugar: { g1: "#ff8fc8", g2: "#7ef0d4", shadow: "rgba(255,143,200,.30)" },
-    bounce: { g1: "#ff9f1c", g2: "#ffe14d", shadow: "rgba(255,159,28,.30)" }
+    chaos:  { g1: "#ff3d5a", g2: "#7b5cff", shadow: "rgba(255,61,90,.35)" },
+    dusty:  { g1: "#f5a623", g2: "#ff6b9d", shadow: "rgba(245,166,35,.32)" },
+    ghost:  { g1: "#39e6d0", g2: "#8b5cf6", shadow: "rgba(57,230,208,.30)" },
+    sugar:  { g1: "#ff8fc8", g2: "#7ef0d4", shadow: "rgba(255,143,200,.30)" },
+    bounce: { g1: "#ff9f1c", g2: "#ffe14d", shadow: "rgba(255,159,28,.30)" },
+    liftoff:{ g1: "#ff6b4a", g2: "#4ad9ff", shadow: "rgba(255,107,74,.30)" },
+    orbit:  { g1: "#ff9d2e", g2: "#ffd76b", shadow: "rgba(255,157,46,.30)" },
+    prism:  { g1: "#ff4ad9", g2: "#4affd9", shadow: "rgba(255,74,217,.30)" },
+    jelly:  { g1: "#ff7ab8", g2: "#8fe8c0", shadow: "rgba(255,122,184,.30)" },
+    fizz:   { g1: "#ffb347", g2: "#c8f05a", shadow: "rgba(255,179,71,.30)" },
+    wizard: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
+    biome:  { g1: "#3ecf6e", g2: "#5ad9d0", shadow: "rgba(62,207,110,.30)" },
+    fauna:  { g1: "#3e9ecf", g2: "#7de8b8", shadow: "rgba(62,158,207,.30)" },
+    gloss:  { g1: "#9be8c9", g2: "#f2a3c2", shadow: "rgba(155,232,201,.30)" },
+    halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
+    hitchords: { g1: "#f2f2f4", g2: "#8b5cf6", shadow: "rgba(139,92,246,.30)" }
   };
 
   var css = "" +
@@ -50,14 +61,16 @@
   document.head.appendChild(style);
 
   function pluginOf(link) {
-    var sec = link.closest("section.plugin");
+    var href = (link.getAttribute("href") || "").toLowerCase();
+    var m = href.match(/downloads\/([a-z0-9]+)/);
+    if (m && ACCENTS[m[1]]) return m[1];
+    var sec = link.closest("section.plugin, .card");
     if (sec) {
-      if (sec.classList.contains("chaos")) return "chaos";
-      if (sec.classList.contains("dusty")) return "dusty";
-      if (sec.classList.contains("ghost")) return "ghost";
+      var names = Object.keys(ACCENTS);
+      for (var i = 0; i < names.length; i++)
+        if (sec.classList.contains(names[i])) return names[i];
     }
-    var m = (link.getAttribute("href") || "").match(/(chaos|dusty|ghost)/i);
-    return m ? m[1].toLowerCase() : "plugin";
+    return m ? m[1] : "plugin";
   }
 
   function startDownload(href) {

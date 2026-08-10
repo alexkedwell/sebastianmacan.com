@@ -128,7 +128,6 @@
       '<input class="eg-input" type="email" name="email" placeholder="you@studio.com" autocomplete="email" required>' +
       '<input class="eg-hp" type="text" id="eg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +
       '<button class="eg-btn" type="submit">Send it \u2192 Download ' + name + '</button>' +
-      '<button class="eg-skip" type="button">No thanks, just download</button>' +
       '<div class="eg-note">Your email is only used for plugin news. Ever.</div>' +
       "</form></div>";
 
@@ -151,10 +150,6 @@
       if (e.target === overlay) close();
     });
     overlay.querySelector(".eg-close").addEventListener("click", close);
-    overlay.querySelector(".eg-skip").addEventListener("click", function () {
-      close();
-      startDownload(href);
-    });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();

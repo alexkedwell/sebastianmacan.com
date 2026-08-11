@@ -25,11 +25,14 @@
     jelly:  { g1: "#ff7ab8", g2: "#8fe8c0", shadow: "rgba(255,122,184,.30)" },
     fizz:   { g1: "#ffb347", g2: "#c8f05a", shadow: "rgba(255,179,71,.30)" },
     wizard: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
+    magician: { g1: "#8b6bff", g2: "#ffd84a", shadow: "rgba(139,107,255,.30)" },
     biome:  { g1: "#3ecf6e", g2: "#5ad9d0", shadow: "rgba(62,207,110,.30)" },
     fauna:  { g1: "#3e9ecf", g2: "#7de8b8", shadow: "rgba(62,158,207,.30)" },
     gloss:  { g1: "#9be8c9", g2: "#f2a3c2", shadow: "rgba(155,232,201,.30)" },
     halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
-    hitchords: { g1: "#f2f2f4", g2: "#8b5cf6", shadow: "rgba(139,92,246,.30)" }
+    hitchords: { g1: "#f2f2f4", g2: "#8b5cf6", shadow: "rgba(139,92,246,.30)" },
+    clubchords: { g1: "#4ad9ff", g2: "#ff4ad9", shadow: "rgba(74,217,255,.30)" },
+    soulchords: { g1: "#f5a623", g2: "#c084fc", shadow: "rgba(245,166,35,.30)" }
   };
 
   var css = "" +

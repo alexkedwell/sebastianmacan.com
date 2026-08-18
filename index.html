@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebastian Macan - Free Audio Plugins | 11 Plugins + 3 MIDI Packs</title>
-<meta name="description" content="11 free creative audio plugins (VST3/AU, macOS) + 460 MIDI chord progressions: Ghost, Bounce, Liftoff, Orbit, Jelly, Magician, Biome, Fauna, Reels, Gloss, Halo.">
+<title>Sebastian Macan - Audio Plugins | 11 Plugins + 10 MIDI Packs</title>
+<meta name="description" content="11 creative audio plugins (VST3/AU, macOS) + 796 MIDI chord progressions incl. the Modal Series: Ghost, Bounce, Liftoff, Orbit, Jelly, Magician, Biome, Fauna, Reels, Gloss, Halo.">
 <style>
   :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -61,6 +61,34 @@
   .hitchords { --g1:#f2f2f4; --g2:#8b5cf6; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
   .clubchords { --g1:#4ad9ff; --g2:#ff4ad9; --glow:#4ad9ff; --shadow:rgba(74,217,255,.26); }
   .soulchords { --g1:#f5a623; --g2:#c084fc; --glow:#f5a623; --shadow:rgba(245,166,35,.26); }
+  .modegrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; margin-top:16px; }
+  .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .modecard:hover { transform:translateY(-5px); border-color:var(--g1); box-shadow:0 14px 44px var(--shadow); }
+  .modecard h3 { font-size:24px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .modecard .vibe { font-size:12px; color:var(--dim); margin-top:2px; min-height:36px; }
+  .modecard .songs { font-size:11px; color:var(--dim); margin-top:6px; font-style:italic; }
+  .modecard .dl { margin-top:12px; padding:9px 18px; font-size:13px; display:block; }
+  .ionian { --g1:#ffd84a; --g2:#ff9f1c; --glow:#ffd84a; --shadow:rgba(255,216,74,.22); }
+  .dorian { --g1:#39e6d0; --g2:#4a90ff; --glow:#39e6d0; --shadow:rgba(57,230,208,.22); }
+  .phrygian { --g1:#ff3d5a; --g2:#8b0000; --glow:#ff3d5a; --shadow:rgba(255,61,90,.22); }
+  .lydian { --g1:#c084fc; --g2:#7dd8ff; --glow:#c084fc; --shadow:rgba(192,132,252,.22); }
+  .mixolydian { --g1:#ff8c42; --g2:#ffd84a; --glow:#ff8c42; --shadow:rgba(255,140,66,.22); }
+  .aeolian { --g1:#7b8cff; --g2:#3d4a8f; --glow:#7b8cff; --shadow:rgba(123,140,255,.22); }
+  .locrian { --g1:#e8e8f0; --g2:#6b21a8; --glow:#a855f7; --shadow:rgba(168,85,247,.24); }
+  .allmodes { --g1:#ff3d5a; --g2:#39e6d0; --glow:#ff3d5a; --shadow:rgba(255,61,90,.24); }
+  .bundlegrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; margin-top:16px; }
+  .bundle { border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; display:flex; flex-direction:column; }
+  .bundle:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
+  .bundle img { display:block; width:100%; height:auto; }
+  .bundle .binner { padding:20px 24px 24px; display:flex; flex-direction:column; flex:1; }
+  .bundle h3 { font-size:26px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .bundle .desc { color:var(--dim); font-size:14px; margin-top:6px; flex:1; }
+  .bundle .price { margin-top:12px; font-weight:900; font-size:20px; }
+  .bundle .price s { color:var(--dim); font-weight:600; font-size:15px; margin-right:8px; }
+  .bundle .price .freebie { color:#39e6d0; }
+  .effects-b { --g1:#8b5cf6; --g2:#39e6d0; --glow:#8b5cf6; --shadow:rgba(139,92,246,.26); }
+  .instruments-b { --g1:#3ecf6e; --g2:#ffd84a; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
+  .everything-b { --g1:#ff3d5a; --g2:#ffd84a; --glow:#ff3d5a; --shadow:rgba(255,61,90,.28); }
   footer { border-top:1px solid var(--line); margin-top:56px; padding:32px 0 48px; color:var(--dim); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   footer a { color:var(--dim); }
   @media (max-width: 640px) {
@@ -78,13 +106,13 @@
 <div class="wrap">
   <header>
     <div class="logo">SEBASTIAN<span>MACAN</span></div>
-    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a></nav>
+    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#bundles">Bundles</a></nav>
   </header>
 
   <section class="hero">
-    <div class="badge">11 Free Plugins + 3 MIDI Packs · VST3 + AU · macOS</div>
+    <div class="badge">11 Plugins + 10 MIDI Packs · VST3 + AU · macOS · Free during launch</div>
     <h1>A whole <em>candy store</em> of sound. Free.</h1>
-    <p class="sub">Eleven plugins and 460 MIDI chord progressions for producers who crave something sweet. Download everything, drop it in your DAW, create something different.</p>
+    <p class="sub">Eleven plugins and 796 MIDI chord progressions for producers who crave something sweet. Download everything, drop it in your DAW, create something different.</p>
   </section>
 
   <div class="sect-title" id="effects">Color &amp; Motion FX</div>
@@ -153,9 +181,9 @@
       <p class="tag">Hit songs on tap. 20 genres.</p>
       <p class="desc">Sebastian's chord generator. Pick from 20 genres: Pop, Trap, Jazz, Gospel, Drill, Afrobeats, Future Bass and more. Smash GENERATE, get a fresh progression + melody every click. Drag the MIDI straight into your DAW.</p>
       <div class="shot"><img src="img/ui/magician.png" alt="Magician plugin interface" loading="lazy"></div>
-      <a class="dl" href="downloads/Magician-v1.0-macOS.pkg">Download Magician</a>
+      <a class="dl" href="downloads/Magician-v1.1-macOS.pkg">Download Magician</a>
       <a class="more" href="magician.html">See how it works &rarr;</a>
-      <div class="meta">v1.0 · VST3 + AU instrument</div>
+      <div class="meta">v1.1 · VST3 + AU instrument</div>
     </div>
     <div class="card fauna">
       <span class="new">NEW</span>
@@ -246,6 +274,88 @@
       <p class="desc">120 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
       <a class="dl" href="downloads/SoulChords120-SebastianMacan.zip">Download the Pack</a>
       <div class="meta">120 .mid files · works in every DAW</div>
+    </div>
+  </div>
+
+  <div class="sect-title" id="modes">Mode Packs · The Modal Series</div>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Most producers write in major or minor and stop there. Modes are the other five flavors, and nobody makes chord packs for them. 48 progressions per mode, every chord true to the mode, the signature color chord in every loop. Ben Bohmer floats in Lydian. Daft Punk grooved in Dorian. Now you.</p>
+  <div class="modegrid">
+    <div class="modecard ionian">
+      <h3>IONIAN</h3>
+      <div class="vibe">Pure major. The sound of every anthem chorus ever written.</div>
+      <div class="songs">Hey Jude · Let It Be · most of pop history</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/IonianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard dorian">
+      <h3>DORIAN</h3>
+      <div class="vibe">Minor with hope. Groovy, cool, never fully sad.</div>
+      <div class="songs">Get Lucky · Billie Jean · Mad World</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/DorianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard phrygian">
+      <h3>PHRYGIAN</h3>
+      <div class="vibe">Dark Spanish menace. Techno, trap and trance villain energy.</div>
+      <div class="songs">Sicko Mode vibe · flamenco · dark techno</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/PhrygianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard lydian">
+      <h3>LYDIAN</h3>
+      <div class="vibe">Floating, dreamlike major. The melodic house secret weapon.</div>
+      <div class="songs">Ben Bohmer territory · film scores · The Simpsons theme</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LydianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard mixolydian">
+      <h3>MIXOLYDIAN</h3>
+      <div class="vibe">Major with a rebel flat seven. Rock, funk and festival gold.</div>
+      <div class="songs">Sweet Home Alabama · Clocks · Royals</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/MixolydianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard aeolian">
+      <h3>AEOLIAN</h3>
+      <div class="vibe">Natural minor. The emotional workhorse of modern music.</div>
+      <div class="songs">Lose Yourself · Someone Like You · every sad banger</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AeolianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard locrian">
+      <h3>LOCRIAN</h3>
+      <div class="vibe">The forbidden mode. So unstable almost nobody writes in it. We did.</div>
+      <div class="songs">Army of Me · YYZ · you, next</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/LocrianMode48-SebastianMacan.zip">Download 48</a>
+    </div>
+    <div class="modecard allmodes">
+      <h3>ALL 7 MODES</h3>
+      <div class="vibe">The complete modal toolkit. 336 progressions. Who else even makes this?</div>
+      <div class="songs">Every mode · every key · one download</div>
+      <a class="dl" style="background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 22px var(--shadow);" href="downloads/AllModes336-SebastianMacan.zip">Download 336</a>
+    </div>
+  </div>
+
+  <div class="sect-title" id="bundles">Bundles · The Candy Baskets</div>
+  <p style="color:var(--dim);font-size:14px;max-width:720px;margin-top:6px;">Everything is free during launch. When checkout opens, these are the baskets worth grabbing.</p>
+  <div class="bundlegrid">
+    <div class="bundle effects-b">
+      <img src="img/bundles/effects_bundle.png" alt="Effects Bundle: six plugin UIs as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>EFFECTS BASKET</h3>
+        <p class="desc">All six paid effects: Ghost, Liftoff, Orbit, Reels, Gloss, Halo. Six flavors of motion, texture and polish in one basket.</p>
+        <div class="price"><s>$114</s> $59 <span class="freebie">· free during launch</span></div>
+      </div>
+    </div>
+    <div class="bundle instruments-b">
+      <img src="img/bundles/instruments_bundle.png" alt="Instruments Bundle: Biome, Magician and Fauna as wrapped candy in a basket" loading="lazy">
+      <div class="binner">
+        <h3>INSTRUMENTS BASKET</h3>
+        <p class="desc">Biome, Magician and Fauna. A texture blender, a hit generator and a creature synth. The three big ones.</p>
+        <div class="price"><s>$107</s> $69 <span class="freebie">· free during launch</span></div>
+      </div>
+    </div>
+    <div class="bundle everything-b">
+      <img src="img/bundles/everything_bundle.png" alt="Everything Bundle: the whole candy shop in one basket" loading="lazy">
+      <div class="binner">
+        <h3>THE WHOLE CANDY SHOP</h3>
+        <p class="desc">Every plugin, every MIDI pack, every mode pack. All of it. One basket to rule the store.</p>
+        <div class="price"><s>$300+</s> $99 <span class="freebie">· free during launch</span></div>
+      </div>
     </div>
   </div>
 

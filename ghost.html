@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biome - Granular Texture Blender | Sebastian Macan</title>
-<meta name="description" content="Biome by Sebastian Macan: drag in any audio and grow it into a huge evolving texture. Free VST3/AU for macOS.">
+<title>Ghost - Granular Texture Machine | Sebastian Macan</title>
+<meta name="description" content="Ghost by Sebastian Macan: Freeze sound. Then haunt it. Free VST3/AU for macOS.">
 <style>
-  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#3ecf6e; --g2:#5ad9d0; }
+  :root { --bg:#0a0a0c; --card:#141418; --txt:#f2f2f4; --dim:#8a8a94; --line:#222228; --g1:#39e6d0; --g2:#8b5cf6; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; line-height:1.65; }
   .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
@@ -23,12 +23,12 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
-    box-shadow:0 20px 80px rgba(62,207,110,.18); animation:float 7s ease-in-out infinite; }
+    box-shadow:0 20px 80px rgba(57,230,208,.24); animation:float 7s ease-in-out infinite; }
   .videobox video { display:block; width:100%; height:auto; }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
-    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(62,207,110,.35); transition:transform .15s; }
+    background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(57,230,208,.24); transition:transform .15s; }
   .dl:hover { transform:translateY(-2px) scale(1.02); }
   .meta { color:var(--dim); font-size:13px; margin-top:12px; }
   h2 { font-size:clamp(22px,4vw,30px); font-weight:900; letter-spacing:-.02em; margin:52px 0 14px; }
@@ -54,37 +54,34 @@
   <a class="back" href="/">&larr; Back to all plugins</a>
 
   <section class="hero">
-    <div class="kind">Granular Texture Blender</div>
-    <h1>BIOME</h1>
-    <p class="tag">Drop a rainforest on your beat.</p>
-    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/biome.png"><source src="img/video/biome_ui_loop.mp4" type="video/mp4"></video></div>
+    <div class="kind">Granular Texture Machine</div>
+    <h1>GHOST</h1>
+    <p class="tag">Freeze sound. Then haunt it.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/ghost.png"><source src="img/video/ghost_ui_loop.mp4" type="video/mp4"></video></div>
     <div class="cta">
-      <a class="dl" href="downloads/Biome-v1.0-macOS.pkg">Download Biome Free</a>
-      <div class="meta">v1.0 &middot; VST3 + AU &middot; macOS</div>
+      <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost Free</a>
+      <div class="meta">v1.1 &middot; VST3 + AU effect &middot; macOS</div>
     </div>
   </section>
 
-  <h2>What Biome does</h2>
-  <p>You give it a sound. Biome turns that sound into a huge, evolving texture: pads, drones, atmospheres. Any audio works. A vocal, a guitar note, a field recording of birds, a crackly vinyl loop. Biome grows it into an ecosystem.</p>
+  <h2>What Ghost does</h2>
+  <p>Ghost freezes the last four seconds of whatever is playing and lets you play around inside the frozen sound. Pads, risers, haunted atmospheres, endless tails: all from audio you already have.</p>
 
   <h2>Get started in 3 steps</h2>
-  <div class="step"><b>1. Put Biome on a track.</b> In your DAW, drag Biome onto a track like you would any plugin.</div>
-  <div class="step"><b>2. Drag any sound into Biome.</b> A vocal, a guitar note, a synth. Drop the audio file right onto Biome's window.</div>
-  <div class="step"><b>3. Play a note.</b> Make a MIDI track and point it at Biome (in Ableton: on the MIDI track, set MIDI To, then your Biome track, then Biome). Press a key, or draw a long note like C3 in the piano roll. Sound starts when the note starts and stops when it ends. Longer note, longer sound.</div>
+  <div class="step"><b>1. Put Ghost on a track.</b> In your DAW, drop Ghost on any track that has sound on it: a vocal, a synth, a whole loop.</div>
+  <div class="step"><b>2. Hit FREEZE while it plays.</b> Ghost traps the last four seconds of audio. The music keeps going, but now Ghost is holding a frozen copy for you.</div>
+  <div class="step"><b>3. Move the XY pad.</b> Drag around the pad to travel through the frozen sound. Different spots sound completely different. When you find magic, keep it.</div>
 
   <h2>Make it yours</h2>
-  <div class="knob"><b>Play different keys.</b> Higher notes make your texture higher, lower notes deeper. Draw a chord and you get a pad.</div>
-  <div class="knob"><b>Turn the knobs while it plays.</b> Every knob morphs the texture. There are no wrong settings.</div>
-  <div class="knob"><b>FIT.</b> Makes your texture loop in time with your song (1, 2, 4 or 8 bars). Your sound stays at the same pitch.</div>
-  <div class="knob"><b>FIT+PITCH.</b> Same thing, but the pitch changes with the speed. That classic sampler sound.</div>
-  <div class="knob"><b>Presets.</b> Pick a starting point from the menu, or save your own with SAVE.</div>
-  <div class="knob"><b>A/B.</b> Flip between two versions of your settings to hear which one is better. COPY carries your current sound over to the other slot.</div>
+  <div class="knob"><b>RANDOMIZE and seeds.</b> Every seed number is a different haunting. Type a seed in, get the same character back any time. Found one you love? Write the number down or save it.</div>
+  <div class="knob"><b>Favorites.</b> Save the spots you love and recall them instantly.</div>
+  <div class="knob"><b>Mix it in.</b> Blend the frozen ghost under the dry sound for texture, or go full wet for pads and transitions.</div>
 
-  <h3>Pro mode</h3>
-  <p>Switch PLAY to DRONE and Biome plays forever, no notes needed. Old-school style. Record it to a new track while you ride the knobs, then chop the best parts.</p>
+  <h3>Pro tip</h3>
+  <p>Freeze a vocal, go full wet, and record long passes to a new track while you ride the XY pad. Chop the best moments: instant custom pad kit.</p>
 
   <div class="cta">
-    <a class="dl" href="downloads/Biome-v1.0-macOS.pkg">Download Biome Free</a>
+    <a class="dl" href="downloads/Ghost-v1.1-macOS.pkg">Download Ghost Free</a>
     <div class="meta">Email required &middot; instant download</div>
   </div>
 

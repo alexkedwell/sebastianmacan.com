@@ -78,8 +78,8 @@ def media(p):
     vid = f'img/video/midi/{p["id"]}_demo.mp4'
     import os as _os
     if _os.path.exists(vid):
-        return f'''<div class="vslot live"><video controls preload="metadata" playsinline poster="img/video/midi/{p["id"]}_poster.jpg"><source src="{vid}" type="video/mp4"></video></div>
-      <div class="vcap">&#9654; Hear it: real progressions straight from the pack</div>'''
+        return f'''<div class="vslot live"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/{p["id"]}_poster.jpg"><source src="{vid}" type="video/mp4"></video></div>
+      <div class="vcap">Real progressions straight from the pack, playing on loop</div>'''
     if p["yt"]:
         return f'''<div class="vslot live"><iframe src="https://www.youtube-nocookie.com/embed/{p["yt"]}" title="{p["name"]} demo" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'''
     return f'''<div class="vslot">

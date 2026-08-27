@@ -75,6 +75,11 @@ PACKS = [
 ]
 
 def media(p):
+    vid = f'img/video/midi/{p["id"]}_demo.mp4'
+    import os as _os
+    if _os.path.exists(vid):
+        return f'''<div class="vslot live"><video controls preload="metadata" playsinline poster="img/video/midi/{p["id"]}_poster.jpg"><source src="{vid}" type="video/mp4"></video></div>
+      <div class="vcap">&#9654; Hear it: real progressions straight from the pack</div>'''
     if p["yt"]:
         return f'''<div class="vslot live"><iframe src="https://www.youtube-nocookie.com/embed/{p["yt"]}" title="{p["name"]} demo" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'''
     return f'''<div class="vslot">
@@ -154,7 +159,9 @@ html = f'''<!DOCTYPE html>
   .vslot {{ position:relative; aspect-ratio:16/9; border-radius:18px; overflow:hidden; border:1px solid var(--line);
     background:radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, var(--g1) 16%, #101014), #0d0d10);
     display:flex; align-items:center; justify-content:center; animation:float 7s ease-in-out infinite; }}
-  .vslot iframe {{ position:absolute; inset:0; width:100%; height:100%; }}
+  .vslot iframe, .vslot video {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }}
+  .vslot.live {{ animation:none; }}
+  .vcap {{ text-align:center; color:var(--dim); font-size:12.5px; margin-top:10px; }}
   @keyframes float {{ 0%,100%{{transform:translateY(0)}} 50%{{transform:translateY(-7px)}} }}
   .vinner {{ text-align:center; padding:20px; }}
   .vplay {{ width:64px; height:64px; margin:0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center;

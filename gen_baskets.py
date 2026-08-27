@@ -36,6 +36,7 @@ BASKETS = [
         "desc": "All six paid effects in one grab. Freeze it, lift it, spin it, tape it, shine it, drown it in glow.",
         "items": ["Ghost", "Liftoff", "Orbit", "Reels", "Gloss", "Halo"],
         "meta": "6 plugins · VST3 + AU · macOS",
+        "big_dl": ("Download the whole basket", "downloads/EffectsBasket-SebastianMacan.zip"),
     },
     {
         "file": "basket-instruments.html", "title": "INSTRUMENTS BASKET", "price": 69, "img": "img/bundles/instruments_bundle.png",
@@ -44,6 +45,7 @@ BASKETS = [
         "desc": "Biome grows textures from any sound, Magician writes the chords and melodies, Fauna is a synth full of living things. The whole instrument shelf.",
         "items": ["Biome", "Magician", "Fauna"],
         "meta": "3 plugins · VST3 + AU · macOS",
+        "big_dl": ("Download the whole basket", "downloads/InstrumentsBasket-SebastianMacan.zip"),
     },
     {
         "file": "basket-midi.html", "title": "MIDI MEGA BASKET", "price": 49, "img": "img/bundles/midi_mega_bundle.png",
@@ -66,6 +68,7 @@ BASKETS = [
                   "Ionian Mode 48", "Dorian Mode 48", "Phrygian Mode 48", "Lydian Mode 48",
                   "Mixolydian Mode 48", "Aeolian Mode 48", "Locrian Mode 48"],
         "meta": "11 plugins + 796 MIDI files",
+        "big_dl": ("Download the whole candy shop", "downloads/WholeCandyShop-SebastianMacan.zip"),
     },
 ]
 
@@ -90,9 +93,11 @@ def page(b):
     total = sum(ITEMS[n][2] for n in b["items"])
     rows = "\n".join(row(n) for n in b["items"])
     big = ""
+    hero_dl = ""
     if b.get("big_dl"):
         label, href = b["big_dl"]
-        big = f'<div class="cta"><a class="dl" href="{href}">{label}</a><div class="meta">One zip, everything inside, organized by pack.</div></div>'
+        big = f'<div class="cta"><a class="dl" href="{href}">{label}</a><div class="meta">One zip, everything inside. Download once, unzip, done.</div></div>'
+        hero_dl = f'<div class="cta" style="margin-top:22px;"><a class="dl" href="{href}">{label}</a></div>'
     n_items = len(b["items"])
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -168,6 +173,7 @@ def page(b):
     <img class="bimg" src="{b["img"]}" alt="{b["title"]} basket art">
     <div class="pricebar"><span class="big"><s>${total}</s> ${b["price"]}</span> <span class="freebie">&middot; free during launch</span></div>
     <div class="meta">{b["meta"]}</div>
+    {hero_dl}
   </section>
 
   <h2>What's in the basket</h2>

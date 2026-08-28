@@ -471,5 +471,21 @@ document.querySelectorAll('.feat .dl[data-dl]').forEach(function(btn){
   });
 });
 </script>
+<script>
+// Play only videos that are on screen. Phones cap simultaneous video playback,
+// so without this some cards freeze on their poster frame.
+document.addEventListener('DOMContentLoaded', function () {
+  var vids = document.querySelectorAll('video');
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { var p = v.play(); if (p) p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  }, { rootMargin: '100px 0px' });
+  vids.forEach(function (v) { io.observe(v); });
+});
+</script>
 </body>
 </html>

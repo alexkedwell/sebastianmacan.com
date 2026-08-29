@@ -10,7 +10,7 @@ ITEMS = {
     "Reels":   ("Subtle Tape Machine", "Sometimes tape plugins do too much. Reels is just the right amount of vintage.", 15, "reels.html", "downloads/Reels-v2.0.1-macOS.pkg"),
     "Gloss":   ("Instant Mix Polish", "Mixes that sit right. Four knobs.", 19, "gloss.html",   "downloads/Gloss-v1.0-macOS.pkg"),
     "Halo":    ("Mastering Finisher", "Turn LIFT until the halo closes. Free forever.", 0, "halo.html", "downloads/Halo-v1.0-macOS.pkg"),
-    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.2-macOS.pkg"),
+    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.2.1-macOS.pkg"),
     "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.0-macOS.pkg"),
     "Fauna":   ("Creature Voice Synth", "Play the ocean. Play the sky.", 29, "fauna.html",   "downloads/Fauna-v1.0-macOS.pkg"),
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),

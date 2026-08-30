@@ -161,7 +161,7 @@ def page(b):
   </section>
 
   <h2>What's in the basket</h2>
-  <p class="sub">{b["desc"]} Every item below is yours &mdash; grab them one by one, all free during launch.</p>
+  <p class="sub">{b["desc"]} Every item below is yours to grab one by one, or take the whole basket in a single zip.</p>
 {rows}
 
   {big}

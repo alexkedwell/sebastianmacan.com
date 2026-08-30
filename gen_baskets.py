@@ -8,7 +8,7 @@ ITEMS = {
     "Orbit":   ("3D Auto-Pan", "Hats that fly around your head.", 15, "orbit.html",   "downloads/Orbit-v1.0-macOS.pkg"),
     "Reels":   ("Subtle Tape Machine", "Sometimes tape plugins do too much. Reels is just the right amount of vintage.", 15, "reels.html", "downloads/Reels-v2.0.1-macOS.pkg"),
     "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.2.1-macOS.pkg"),
-    "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.0-macOS.pkg"),
+    "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.5.1-macOS.pkg"),
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
     "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3-macOS.pkg"),
     "Hit Chords 200":  ("MIDI Chord Pack", "200 progressions built for hooks.", 15, None, "downloads/HitChords200-SebastianMacan.zip"),

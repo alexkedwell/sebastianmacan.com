@@ -58,7 +58,7 @@ BASKETS = [
 
 def row(name):
     kind, tag, price, page, dl = ITEMS[name]
-    price_html = f'<s>${price}</s>' if price else '<span class="freetag">FREE forever</span>'
+    price_html = f'${price}' if price else '<span class="freetag">FREE forever</span>'
     link = f'<a class="rowlink" href="{page}">See how it works &rarr;</a>' if page else ''
     return f'''    <div class="item">
       <div class="iinfo">
@@ -155,7 +155,7 @@ def page(b):
     <h1>{b["title"]}</h1>
     <p class="tag">{b["tag"]}</p>
     <img class="bimg" src="{b["img"]}" alt="{b["title"]} basket art">
-    <div class="pricebar"><span class="big"><s>${total}</s> ${b["price"]}</span> <span class="freebie">&middot; free during launch</span></div>
+    <div class="pricebar"><span class="big">${b["price"]}</span></div>
     <div class="meta">{b["meta"]}</div>
     {hero_dl}
   </section>

@@ -36,6 +36,16 @@ BASKETS = [
         "big_dl": ("Download all 796", "downloads/MIDIMega796-SebastianMacan.zip"),
     },
     {
+        "file": "basket-modes.html", "title": "ALL 7 MODES BASKET", "price": 39, "img": "img/bundles/modes_bundle.png",
+        "g1": "#8b5cf6", "g2": "#39e6d0",
+        "tag": "The whole Modal Series. Every secret flavor in one basket.",
+        "desc": "All 7 mode packs from the Modal Series: Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian. 336 progressions, every chord true to its mode, the signature color chord in every loop.",
+        "items": ["Ionian Mode 48", "Dorian Mode 48", "Phrygian Mode 48", "Lydian Mode 48",
+                  "Mixolydian Mode 48", "Aeolian Mode 48", "Locrian Mode 48"],
+        "meta": "7 packs · 336 MIDI files · any DAW",
+        "big_dl": ("Download all 7 modes", "downloads/AllModes336-SebastianMacan.zip"),
+    },
+    {
         "file": "basket-lofi.html", "title": "LOFI BUNDLE", "price": 25, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
         "tag": "The bedroom lofi starter kit. Tape and birdsong.",

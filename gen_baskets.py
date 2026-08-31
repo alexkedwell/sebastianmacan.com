@@ -10,7 +10,7 @@ ITEMS = {
     "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.2.2-macOS.pkg"),
     "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.5.1-macOS.pkg"),
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
-    "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3-macOS.pkg"),
+    "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3.4-macOS.pkg"),
     "Fireplace": ("Ambience Machine", "Real crackling rooms under your beat. Fire, rain, vinyl.", 15, "fireplace.html", "downloads/Fireplace-v1.1-macOS.pkg"),
     "Halo":    ("One-Knob Mastering", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html", "downloads/Halo-v1.2-macOS.pkg"),
     "Hit Chords 500":  ("MIDI Chord Pack", "500 progressions built for hooks, every key covered.", 20, None, "downloads/HitChords500-SebastianMacan.zip"),

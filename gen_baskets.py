@@ -13,7 +13,7 @@ ITEMS = {
     "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3-macOS.pkg"),
     "Fireplace": ("Ambience Machine", "Real crackling rooms under your beat. Fire, rain, vinyl.", 15, "fireplace.html", "downloads/Fireplace-v1.1-macOS.pkg"),
     "Halo":    ("One-Knob Mastering", "Drop it on your master. Turn LIFT until the halo closes.", 29, "halo.html", "downloads/Halo-v1.2-macOS.pkg"),
-    "Hit Chords 500":  ("MIDI Chord Pack", "500 progressions built for hooks, every key covered.", 15, None, "downloads/HitChords500-SebastianMacan.zip"),
+    "Hit Chords 500":  ("MIDI Chord Pack", "500 progressions built for hooks, every key covered.", 20, None, "downloads/HitChords500-SebastianMacan.zip"),
     "Club Chords 240": ("MIDI Chord Pack", "240 progressions for the floor, every key covered.", 15, None, "downloads/ClubChords240-SebastianMacan.zip"),
     "Soul Chords 240": ("MIDI Chord Pack", "240 progressions with feel, every key covered.", 15, None, "downloads/SoulChords240-SebastianMacan.zip"),
     "Ionian Mode 48":     ("MIDI Mode Pack", "48 progressions. The bright classic.", 10, None, "downloads/IonianMode48-SebastianMacan.zip"),

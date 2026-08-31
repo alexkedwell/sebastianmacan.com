@@ -72,12 +72,13 @@
   .cardlink { position:absolute; inset:0; z-index:1; }
   .modecard .dl { position:relative; z-index:2; }
   .modecard h3, .modecard .vibe, .modecard .songs { position:relative; pointer-events:none; }
-  .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .modecard { border:1px solid var(--line); background:var(--card); border-radius:16px; padding:20px 20px 18px; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .modecard:hover { transform:translateY(-5px); border-color:var(--g1); box-shadow:0 14px 44px var(--shadow); }
   .modecard h3 { font-size:24px; font-weight:900; letter-spacing:-.02em; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .modecard .vibe { font-size:12px; color:var(--dim); margin-top:2px; min-height:36px; }
   .modecard .songs { font-size:11px; color:var(--dim); margin-top:6px; font-style:italic; }
-  .modecard .dl { margin-top:12px; padding:9px 18px; font-size:13px; display:block; }
+  .modecard .dl { margin-top:auto; padding:9px 18px; font-size:13px; display:block; }
+.modecard .songs { margin-bottom:12px; }
   .warble { --g1:#2bb59a; --g2:#ff9f43; --glow:#2bb59a; --shadow:rgba(43,181,154,.22); }
   .ionian { --g1:#ffd84a; --g2:#ff9f1c; --glow:#ffd84a; --shadow:rgba(255,216,74,.22); }
   .dorian { --g1:#39e6d0; --g2:#4a90ff; --glow:#39e6d0; --shadow:rgba(57,230,208,.22); }

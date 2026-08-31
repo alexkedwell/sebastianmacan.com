@@ -7,7 +7,7 @@ ITEMS = {
     # name: (kind, tagline, price, page, download)
     "Orbit":   ("3D Auto-Pan", "Hats that fly around your head. Free forever.", 0, "orbit.html",   "downloads/Orbit-v1.0-macOS.pkg"),
     "Reels":   ("Subtle Tape Machine", "Sometimes tape plugins do too much. Reels is just the right amount of vintage.", 15, "reels.html", "downloads/Reels-v2.0.1-macOS.pkg"),
-    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.3.2-macOS.pkg"),
+    "Biome":   ("Granular Texture Blender", "Drop a rainforest on your beat.", 39, "biome.html",   "downloads/Biome-v1.4.0-macOS.pkg"),
     "Magician":("Chord & Melody Generator", "Hit songs on tap. 20 genres.", 39, "magician.html","downloads/Magician-v1.5.1-macOS.pkg"),
     "Jelly":   ("Wobble Machine", "Make everything jiggle.", 15, "jelly.html",  "downloads/Jelly-v1.0-macOS.pkg"),
     "Warble":  ("Drunk Songbird Pitch Wobbler", "Make any sound sing like a weird little bird.", 15, "warble.html", "downloads/Warble-v1.3.4-macOS.pkg"),

@@ -28,29 +28,29 @@
     /* plugins */
     biome:         { name: 'Biome',                  cents: 3900, priceId: 'pri_01m09h3ccsvkn3gxqt033pppd5' },
     magician:      { name: 'Chordsmith',               cents: 3900, priceId: 'pri_01m09h3cvs4nrrch2v4r9zbq5n' },
-    jelly:         { name: 'Jelly',                  cents: 1500, priceId: 'pri_01m09h3fehacjter00k42pzpxv' },
-    warble:        { name: 'Warble',                 cents: 1500, priceId: null },
-    reels:         { name: 'Reels',                  cents: 1500, priceId: 'pri_01m09knhzr1cw8wh8ywvbtakkq' },
-    halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m09knjnxhgp9rdzdrnxhkkvm' },
+    jelly:         { name: 'Jelly',                  cents: 1500, priceId: 'pri_01m1gntsq26gagfdqahmz3thdk' },
+    warble:        { name: 'Warble',                 cents: 1500, priceId: 'pri_01m1gntt0z0mpgfr059dve73fj' },
+    reels:         { name: 'Reels',                  cents: 1500, priceId: 'pri_01m1gnswg636185tfrqxdgyaqr' },
+    halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m1gnswspxareqhrervwre5a3' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
-    hitchords:     { name: 'Hit Chords 500',         cents: 1500, priceId: 'pri_01m09h3gzkbc8993rpewg6qkj1' },
-    clubchords:    { name: 'Club Chords 240',        cents: 1500, priceId: 'pri_01m09h3hbchqxtjymp0tr9mbbq' },
-    soulchords:    { name: 'Soul Chords 240',        cents: 1500, priceId: 'pri_01m09h3hqb7pspm8vcjenj7ymw' },
+    hitchords:     { name: 'Hit Chords 500',         cents: 1500, priceId: 'pri_01m1gnsx2qvxew8czas9ym2qa4' },
+    clubchords:    { name: 'Club Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxcvj6w77fanegkzwm1j' },
+    soulchords:    { name: 'Soul Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxngw04eejk0qr67kpmd' },
     /* Modal Series */
-    ionian:        { name: 'Ionian Mode 48',         cents: 500, priceId: 'pri_01m09knnb2gp6q7dp9mdny8cx7' },
-    dorian:        { name: 'Dorian Mode 48',         cents: 500, priceId: 'pri_01m09knnq1fx9rejbg028mj0bh' },
-    phrygian:      { name: 'Phrygian Mode 48',       cents: 500, priceId: 'pri_01m09knp2nnva32n8m3dna326p' },
-    lydian:        { name: 'Lydian Mode 48',         cents: 500, priceId: 'pri_01m09knpfe4e1cy7682fyz088c' },
-    mixolydian:    { name: 'Mixolydian Mode 48',     cents: 500, priceId: 'pri_01m09knpv8pxec43eskt944jv0' },
-    aeolian:       { name: 'Aeolian Mode 48',        cents: 500, priceId: 'pri_01m09knq7kdagdnefd1f9sj72e' },
-    locrian:       { name: 'Locrian Mode 48',        cents: 500, priceId: 'pri_01m09knqm4h579m4zfj2asj5ts' },
+    ionian:        { name: 'Ionian Mode 48',         cents: 500, priceId: 'pri_01m1gnsxxvfs2nbag2280x8ydj' },
+    dorian:        { name: 'Dorian Mode 48',         cents: 500, priceId: 'pri_01m1gnsy80zd3s9wnzgxk4dtgc' },
+    phrygian:      { name: 'Phrygian Mode 48',       cents: 500, priceId: 'pri_01m1gnsyh2zn6hkdp22h1n6vke' },
+    lydian:        { name: 'Lydian Mode 48',         cents: 500, priceId: 'pri_01m1gnsysmfa7ejv2s88q66ae5' },
+    mixolydian:    { name: 'Mixolydian Mode 48',     cents: 500, priceId: 'pri_01m1gnsz22tc0s96mj22p199bk' },
+    aeolian:       { name: 'Aeolian Mode 48',        cents: 500, priceId: 'pri_01m1gnszb10sszgqjgfhf2ja1z' },
+    locrian:       { name: 'Locrian Mode 48',        cents: 500, priceId: 'pri_01m1gnszmtjsf1tay41580e54r' },
     /* bundles / baskets */
-    allmodes:      { name: 'All 7 Modes Basket',     cents: 1200, priceId: 'pri_01m09knmkjnn8hhtn3pg5gj3m4' },
+    allmodes:      { name: 'All 7 Modes Basket',     cents: 1200, priceId: 'pri_01m1gnszy7hgdp0xw9gfyqe7ha' },
     midimega:      { name: 'MIDI Mega Basket',       cents: 4900, priceId: 'pri_01m09n48fjhgmpb2hxcmr2kyf0' },
-    lofibasket:    { name: 'Lofi Basket',            cents: 2500, priceId: null },
-    lofimastering: { name: 'Lofi Basket + Mastering', cents: 3900, priceId: null },
-    hitmakercomplete: { name: 'Hitmaker Chords - Complete Series', cents: 3000, priceId: null }
+    lofibasket:    { name: 'Lofi Basket',            cents: 2500, priceId: 'pri_01m1gnttabk978z0hhy3nfa0nh' },
+    lofimastering: { name: 'Lofi Basket + Mastering', cents: 3900, priceId: 'pri_01m1gnttn6knzethpg4j3a6hrd' },
+    hitmakercomplete: { name: 'Hitmaker Chords - Complete Series', cents: 3000, priceId: 'pri_01m1gnttz53wm3x06bvhhrtcmq' }
   };
 
   var KEY = 'sm_cart_v1';

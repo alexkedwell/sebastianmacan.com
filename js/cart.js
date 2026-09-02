@@ -27,7 +27,7 @@
   var CATALOG = {
     /* plugins */
     biome:         { name: 'Biome',                  cents: 3900, priceId: 'pri_01m09h3ccsvkn3gxqt033pppd5' },
-    magician:      { name: 'Magician',               cents: 3900, priceId: 'pri_01m09h3cvs4nrrch2v4r9zbq5n' },
+    magician:      { name: 'Chordsmith',               cents: 3900, priceId: 'pri_01m09h3cvs4nrrch2v4r9zbq5n' },
     jelly:         { name: 'Jelly',                  cents: 1500, priceId: 'pri_01m09h3fehacjter00k42pzpxv' },
     warble:        { name: 'Warble',                 cents: 1500, priceId: null },
     reels:         { name: 'Reels',                  cents: 1500, priceId: 'pri_01m09knhzr1cw8wh8ywvbtakkq' },

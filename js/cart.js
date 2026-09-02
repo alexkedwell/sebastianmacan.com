@@ -34,7 +34,7 @@
     halo:          { name: 'Halo',                   cents: 2900, priceId: 'pri_01m09knjnxhgp9rdzdrnxhkkvm' },
     gloss:         { name: 'Gloss',                  cents: 1900, priceId: 'pri_01m09knjab3bppsqctg98j5s3b' },
     /* MIDI chord packs */
-    hitchords:     { name: 'Hit Chords 500',         cents: 2000, priceId: 'pri_01m09h3gzkbc8993rpewg6qkj1' },
+    hitchords:     { name: 'Hit Chords 500',         cents: 1500, priceId: 'pri_01m09h3gzkbc8993rpewg6qkj1' },
     clubchords:    { name: 'Club Chords 240',        cents: 1500, priceId: 'pri_01m09h3hbchqxtjymp0tr9mbbq' },
     soulchords:    { name: 'Soul Chords 240',        cents: 1500, priceId: 'pri_01m09h3hqb7pspm8vcjenj7ymw' },
     /* Modal Series */
@@ -126,7 +126,9 @@
     '.cartbtn.buy{color:#fff;border:1px solid transparent;background:linear-gradient(135deg,var(--g1,#ff3d5a),var(--g2,#7b5cff));',
     ' box-shadow:0 4px 18px var(--shadow,rgba(123,92,255,.3));}',
     '.cartbtn.added{border-color:#39e6d0;color:#39e6d0;}',
-    '@media (max-width:640px){#smcart-tab{top:10px;left:10px;padding:8px 12px;}}'
+    '@media (max-width:640px){#smcart-tab{top:10px;left:10px;padding:8px 12px;}}',
+    '#smcart-tab.innav{position:static;display:inline-flex;margin-left:6px;padding:5px 12px;vertical-align:middle;}',
+    '#smcart-tab.innav svg{width:15px;height:15px;}'
   ].join('\n');
 
   var CART_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6.2"/></svg>';
@@ -144,7 +146,11 @@
     tab.setAttribute('tabindex', '0');
     tab.setAttribute('aria-label', 'Open cart');
     tab.innerHTML = CART_SVG + '<span>Cart</span><span id="smcart-badge">0</span>';
-    document.body.appendChild(tab);
+    /* Preferred home: inside the header nav, right after the last link
+       (next to "Bundles"). Fallback: fixed pill top-left. */
+    var nav = document.querySelector('header nav, nav');
+    if (nav) { tab.classList.add('innav'); nav.appendChild(tab); }
+    else { document.body.appendChild(tab); }
 
     var overlay = document.createElement('div');
     overlay.id = 'smcart-overlay';
@@ -187,12 +193,12 @@
       }
       tab.style.top = top + 'px';
     }
-    positionTab();
+    if (!tab.classList.contains('innav')) positionTab();
     var ptTick = false;
     function onScrollResize() {
       if (ptTick) return;
       ptTick = true;
-      requestAnimationFrame(function () { ptTick = false; positionTab(); });
+      requestAnimationFrame(function () { ptTick = false; if (!tab.classList.contains('innav')) positionTab(); });
     }
     window.addEventListener('scroll', onScrollResize, { passive: true });
     window.addEventListener('resize', onScrollResize);

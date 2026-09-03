@@ -22,7 +22,7 @@
   'use strict';
 
   var PADDLE_ENV = 'production';       // 'sandbox' while testing
-  var PADDLE_CLIENT_TOKEN = '';        // TODO: paste Paddle client-side token before launch
+  var PADDLE_CLIENT_TOKEN = 'live_cdfa8413fc96d7fac44e0f498d0';
 
   var CATALOG = {
     /* plugins */

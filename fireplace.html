@@ -27,6 +27,10 @@
   h1 { font-size:clamp(44px,9vw,84px); font-weight:900; letter-spacing:-.03em; line-height:1;
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .tag { font-size:clamp(16px,3vw,21px); font-weight:700; margin-top:8px; }
+  .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 20px 80px rgba(255,122,47,.28); animation:float 7s ease-in-out infinite; }
+  .videobox video { display:block; width:100%; height:auto; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   .cta { text-align:center; margin:28px 0 8px; }
   .dl { display:inline-block; color:#fff; font-weight:800; font-size:17px; padding:16px 44px; border-radius:999px; text-decoration:none;
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 8px 36px rgba(255,140,66,.26); transition:transform .15s; }
@@ -133,6 +137,7 @@
     <div class="kind">The Cozy Ambience Machine</div>
     <h1>FIREPLACE</h1>
     <p class="tag">A living room for your lofi beat.</p>
+    <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/fireplace.png?v=1.3"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
     <div class="cta">
       <a class="dl" href="downloads/Fireplace-v1.3-macOS.pkg">Download Fireplace Free</a>
       <div class="meta">v1.3 &middot; VST3 + AU effect &middot; macOS</div>
@@ -141,8 +146,6 @@
 
   <h2>What Fireplace does</h2>
   <p>Fireplace puts a room around your music. Drop it on your master or a bus and it lays living atmosphere UNDER the beat: a crackling fire, rain on a window, a dusty attic record player, an old tape machine room. It is not a noise loop. The fire, the attic and the tape room are generated live and never repeat. The rain is a real forest downpour Sebastian recorded himself, played back in random windows with slow crossfades so it never loops either. And the whole thing listens to your music so it can get out of the way.</p>
-
-  <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/fireplace.png?v=1.3"><source src="img/video/fireplace_ui_loop.mp4?v=1.3" type="video/mp4"></video></div>
 
   <h2>Pick your room</h2>
   <div class="bot"><b>FIREPLACE.</b> The classic. Warm low roar, snapping crackle bursts, embers fizzing up the chimney. The fire in the window actually burns, and it burns brighter as you turn it up.</div>

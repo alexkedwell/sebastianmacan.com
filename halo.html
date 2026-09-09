@@ -60,6 +60,19 @@
   .mw-title span { color:var(--dim); font-weight:600; }
   .mw-bar { height:4px; border-radius:2px; background:rgba(255,255,255,.08); margin-top:7px; cursor:pointer; overflow:hidden; }
   .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:2px; }
+  /* MADE WITH — video variant + lightbox */
+  .mw.vid .mw-play svg.p { display:none; } .mw.vid .mw-play::after { content:""; width:0; height:0; border-left:14px solid #0a0a0c; border-top:8px solid transparent; border-bottom:8px solid transparent; margin-left:3px; }
+  .mw.vid .mw-body { cursor:pointer; }
+  .mw.vid .mw-bar { background:linear-gradient(90deg,var(--g1),var(--g2)); opacity:.35; }
+  .mw.vid .mw-lbl::after { content:" · VIDEO"; color:var(--g1); }
+  .mw-lb { position:fixed; inset:0; z-index:9999; background:rgba(6,6,8,.92); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+  .mw-lb.on { opacity:1; pointer-events:auto; }
+  .mw-lb-in { position:relative; height:min(92vh, 1920px); aspect-ratio:9/16; max-width:96vw; border-radius:22px; overflow:hidden; background:#000; box-shadow:0 30px 120px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); transform:scale(.96); transition:transform .25s ease; }
+  .mw-lb.on .mw-lb-in { transform:scale(1); }
+  .mw-lb-in video { width:100%; height:100%; display:block; object-fit:contain; background:#000; }
+  .mw-lb-t { position:absolute; left:16px; top:14px; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.8); pointer-events:none; }
+  .mw-lb-x { position:absolute; right:12px; top:8px; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.12); color:#fff; font-size:26px; line-height:38px; text-align:center; cursor:pointer; }
+  .mw-lb-x:hover { background:rgba(255,255,255,.25); }
   .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
   .madewith { margin:34px 0 8px; }
   .madewith h2 { margin-bottom:6px; }
@@ -198,8 +211,8 @@
   <section class="madewith">
   <h2>Made with Halo</h2>
   <p>Full tracks Sebastian produced using Halo. Press play.</p>
-  <div class="mw" data-src="audio/ecosystem.m4a?v=final">
-        <span class="mw-play" role="button" tabindex="0" aria-label="Play Ecosystem"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+  <div class="mw" data-video="img/video/ecosystem_ad.mp4" data-poster="img/video/ecosystem_ad_poster.jpg">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Watch Ecosystem"></span>
         <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Ecosystem <span>&middot; Biome + Halo</span></div><div class="mw-bar"><i></i></div></div>
         <span class="mw-time">--:--</span>
       </div>
@@ -254,6 +267,6 @@
 </div>
 <script src="js/cart.js?v=p1" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script src="js/madewith.js"></script>
+<script src="js/madewith.js?v=2"></script>
 </body>
 </html>

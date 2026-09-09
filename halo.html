@@ -47,6 +47,24 @@
   .step b { color:var(--txt); }
   .knob { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--g1); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .knob b { color:var(--txt); }
+
+  /* MADE WITH — track player */
+  .mw { display:flex; align-items:center; gap:12px; margin-top:14px; padding:10px 12px 10px 10px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid var(--line); position:relative; z-index:2; }
+  .mw-play { flex:0 0 40px; width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--g1),var(--g2)); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.4); transition:transform .15s ease; }
+  .mw-play:hover { transform:scale(1.06); }
+  .mw-play svg { width:16px; height:16px; fill:#0a0a0c; margin-left:2px; }
+  .mw.on .mw-play svg.p { display:none; } .mw .mw-play svg.s { display:none; } .mw.on .mw-play svg.s { display:block; margin-left:0; }
+  .mw-body { flex:1; min-width:0; }
+  .mw-lbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); font-weight:700; }
+  .mw-title { font-size:14px; font-weight:800; color:var(--txt); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mw-title span { color:var(--dim); font-weight:600; }
+  .mw-bar { height:4px; border-radius:2px; background:rgba(255,255,255,.08); margin-top:7px; cursor:pointer; overflow:hidden; }
+  .mw-bar i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--g1),var(--g2)); border-radius:2px; }
+  .mw-time { font-size:11px; color:var(--dim); font-variant-numeric:tabular-nums; flex:0 0 auto; }
+  .madewith { margin:34px 0 8px; }
+  .madewith h2 { margin-bottom:6px; }
+  .madewith p { color:var(--dim); font-size:14px; margin:0 0 4px; }
+
   /* In the studio — real recording of Sebastian using the plugin */
   .studio { margin:34px auto 6px; max-width:920px; }
   .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
@@ -177,6 +195,16 @@
   </script>
   -->
 
+  <section class="madewith">
+  <h2>Made with Halo</h2>
+  <p>Full tracks Sebastian produced using Halo. Press play.</p>
+  <div class="mw" data-src="audio/ecosystem.m4a">
+        <span class="mw-play" role="button" tabindex="0" aria-label="Play Ecosystem"><svg class="p" viewBox="0 0 16 16"><path d="M3 1.5v13l11-6.5z"/></svg><svg class="s" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="4" height="11" rx="1"/><rect x="9.5" y="2.5" width="4" height="11" rx="1"/></svg></span>
+        <div class="mw-body"><div class="mw-lbl">Made with</div><div class="mw-title">Ecosystem <span>&middot; Biome + Halo</span></div><div class="mw-bar"><i></i></div></div>
+        <span class="mw-time">--:--</span>
+      </div>
+  </section>
+
   <h2>What Halo does</h2>
   <p>Halo is mastering with one knob and a golden ring. It lives on your master channel, always the last plugin in the chain. Pick a target, turn LIFT until the halo closes around it, and your track lands loud, glued and streaming-ready with a true-peak limiter on the door.</p>
 
@@ -226,5 +254,6 @@
 </div>
 <script src="js/cart.js?v=p1" defer></script>
 <script src="js/email-gate.js" defer></script>
+<script src="js/madewith.js"></script>
 </body>
 </html>

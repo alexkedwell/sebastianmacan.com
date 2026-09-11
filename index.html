@@ -41,7 +41,9 @@
     background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .card .kind { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin-bottom:10px; font-weight:700; }
   .card .tag { margin-top:6px; font-size:16px; font-weight:700; }
-  .card .desc { margin-top:8px; color:var(--dim); font-size:14px; flex:1; }
+  .card .desc { margin-top:8px; color:var(--dim); font-size:14px; }
+  .card .shot + .dl { margin-top:auto; padding-top:0; }
+  .card .shot { margin-bottom:18px; }
   .dl { display:inline-block; margin-top:18px; color:#fff; font-weight:800; font-size:15px; text-align:center;
     padding:13px 26px; border-radius:999px; text-decoration:none; letter-spacing:.02em; transition:transform .15s;
     background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 28px var(--shadow); }
@@ -202,7 +204,7 @@
       <h2>CHORDSMITH</h2>
       <p class="tag">Hit songs on tap. 20 genres.</p>
       <p class="desc">Sebastian's chord generator. Pick from 20 genres: Pop, Trap, Jazz, Gospel, Drill, Afrobeats, Future Bass and more. All seven modes from Dorian to Locrian. Smash GENERATE, reroll any chord you dislike, drag the MIDI straight into your DAW.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chordsmith.png?v=1.7.3g"><source src="img/video/chordsmith_ui_loop.mp4?v=1.7.3g" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chordsmith.png?v=1.7.3h"><source src="img/video/chordsmith_ui_loop.mp4?v=1.7.3h" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="magician">Buy Chordsmith &middot; $39</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="magician">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="magician">Buy Now</span></div>
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>

@@ -28,6 +28,11 @@
     background:linear-gradient(135deg,#ff5ca8,#8b5cf6); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .hero p { color:var(--dim); max-width:640px; margin:12px auto 0; font-size:15.5px; }
   .toc { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:26px 0 8px; }
+  .keytip { max-width:760px; margin:22px auto 0; padding:14px 18px; border-radius:16px; text-align:left;
+    background:linear-gradient(135deg,rgba(61,240,168,.10),rgba(96,170,255,.08)); border:1px solid rgba(61,240,168,.35); }
+  .keytip .kt-h { font-size:11px; font-weight:800; letter-spacing:.16em; color:#3df0a8; margin-bottom:6px; }
+  .keytip p { margin:0; font-size:14px; line-height:1.55; color:#d6d6de; }
+  .keytip code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; padding:2px 7px; border-radius:6px; background:rgba(255,255,255,.08); color:#fff; }
   .toc a { font-size:12px; font-weight:800; letter-spacing:.04em; text-decoration:none; padding:8px 14px; border-radius:999px;
     border:1px solid var(--line); color:var(--txt); background:var(--card); transition:transform .15s, border-color .15s; }
   .toc a:hover { transform:translateY(-2px); border-color:var(--g1); }
@@ -85,6 +90,10 @@
     <div class="kind">MIDI Packs</div>
     <h1>3788 PROGRESSIONS</h1>
     <p>Every chord pack and mode pack in the store, up close. Drag any .mid file into your DAW, drop it on any synth or piano you already own, and it plays. No plugin required, works everywhere MIDI works.</p>
+    <div class="keytip">
+      <div class="kt-h">FIND YOUR KEY IN ONE SEARCH</div>
+      <p>Every file ends in a search tag like <code>KEY-Bminor</code>, <code>KEY-Fsmajor</code> (s = sharp), <code>KEY-Ebminor</code>, <code>KEY-Adorian</code>. Type the tag into your DAW browser (Ableton, FL, Logic, Bitwig) and only that key shows up: <code>KEY-Bminor</code> never matches B-flat. Search a progression too: <code>i-VI-III-VII</code>.</p>
+    </div>
     <div class="toc">
       <a href="#hitmaker" style="--g1:#60aaff;--g2:#9fd4ff;">HITMAKER CHORDS &middot; 25 PACKS</a>
       <a href="#hitchords" style="--g1:#ff5ca8;--g2:#ffd257;">HIT CHORDS 500</a>
@@ -114,6 +123,7 @@
       <p class="desc">Hit-researched progressions, pack by pack so you only grab the sound you make. 20 genre packs (about 100 MIDIs each, every progression in all 12 keys) plus 5 mode packs for flavor hunters. Every file named with key and progression, voiced like the records.</p>
       <ul>
           <li>20 genres + 5 modes, sold as separate packs</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Each progression in all 12 keys, labeled, drag straight in</li>
           <li>Same research DNA as the Chordsmith HITMAKER engine</li>
       </ul>
@@ -178,6 +188,7 @@
       <p class="desc">500 chord progressions across 11 genres: Pop, Trap, RnB, EDM, LoFi, Rock, Latin, Cinematic, Country, Gospel/Jazz, K-Pop. Genre-true voicings with the 7ths and 9ths already in place.</p>
       <ul>
           <li>11 genres, 500 progressions, all 24 keys</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Voiced like the records, not block triads</li>
           <li>Labeled by genre and key, drag straight in</li>
       </ul>
@@ -201,6 +212,7 @@
       <p class="desc">240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum & Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
       <ul>
           <li>6 club genres, 40 progressions each, all 24 keys</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Stab voicings and pads that cut through a mix</li>
           <li>Tested against four-on-the-floor grooves</li>
       </ul>
@@ -224,6 +236,7 @@
       <p class="desc">240 progressions dripping with soul: Neo-Soul, Gospel, Jazz, Blues, Motown, Funk. Extended voicings, turnarounds and walkups straight from the source.</p>
       <ul>
           <li>6 soul genres, 40 progressions each, all 24 keys</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>Real extended voicings: 9ths, 11ths, 13ths</li>
           <li>Turnarounds and walkups included</li>
       </ul>
@@ -247,6 +260,7 @@
       <p class="desc">48 progressions in pure major, the brightest flavor in the case. Anthem choruses, singalong ballads, most of pop history. Every loop lands the mode's signature color.</p>
       <ul>
           <li>48 progressions, every chord true to Ionian</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Anthem-chorus energy on tap</li>
       </ul>
@@ -270,6 +284,7 @@
       <p class="desc">48 progressions in the mode of French house, classic funk and moody synth-pop. Minor that grooves instead of mopes, with the raised sixth doing the magic.</p>
       <ul>
           <li>48 progressions, signature raised-6th color</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>The funk and French-house secret</li>
       </ul>
@@ -293,6 +308,7 @@
       <p class="desc">48 progressions with the flat-2 knife edge: dark techno, trap and trance menace, flamenco fire. The mode you reach for when a track needs a threat.</p>
       <ul>
           <li>48 progressions built on the flat-2 color</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Techno, trap and cinematic tension</li>
       </ul>
@@ -316,6 +332,7 @@
       <p class="desc">48 progressions that float: Melodic house territory, film scores, that raised-4 shimmer that makes a chord sound like it's levitating.</p>
       <ul>
           <li>48 progressions with the raised-4 shimmer</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Melodic house and score writers, feast</li>
       </ul>
@@ -339,6 +356,7 @@
       <p class="desc">48 progressions in the mode of southern rock, stadium pop and radio swagger. Major that swaggers, powered by the flat-7.</p>
       <ul>
           <li>48 progressions on the flat-7 swagger</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Rock, funk, festival anthems</li>
       </ul>
@@ -362,6 +380,7 @@
       <p class="desc">48 progressions in natural minor: Hip-hop anthems, tearjerker ballads, every sad banger ever. The workhorse, done right.</p>
       <ul>
           <li>48 progressions of pure natural minor</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>The emotional backbone of modern music</li>
       </ul>
@@ -385,6 +404,7 @@
       <p class="desc">48 progressions in the mode theory teachers warn you about. Unstable, unresolved, unforgettable. Industrial menace, prog experiments, you next.</p>
       <ul>
           <li>48 progressions taming the diminished tonic</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>All keys covered</li>
           <li>Sounds nobody else's pack has</li>
       </ul>
@@ -408,6 +428,7 @@
       <p class="desc">Every mode pack in one download: all 7 modes, 48 progressions each, 336 total. The whole rest of the candy case.</p>
       <ul>
           <li>All 7 mode packs in one zip</li>
+          <li>DAW-searchable key tags on every file: type <code>KEY-Bminor</code> and only B minor shows up</li>
           <li>336 progressions, every key</li>
           <li>One download, the full modal palette</li>
       </ul>

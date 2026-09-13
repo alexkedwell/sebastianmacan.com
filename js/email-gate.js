@@ -30,7 +30,8 @@
     fauna:  { g1: "#3e9ecf", g2: "#7de8b8", shadow: "rgba(62,158,207,.30)" },
     gloss:  { g1: "#9be8c9", g2: "#f2a3c2", shadow: "rgba(155,232,201,.30)" },
     halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
-    hitchords: { g1: "#f2f2f4", g2: "#8b5cf6", shadow: "rgba(139,92,246,.30)" },
+    hitmaker: { g1: "#60aaff", g2: "#9fd4ff", shadow: "rgba(96,170,255,.30)" },
+    hitmakercomplete: { g1: "#60aaff", g2: "#9fd4ff", shadow: "rgba(96,170,255,.30)" },
     clubchords: { g1: "#4ad9ff", g2: "#ff4ad9", shadow: "rgba(74,217,255,.30)" },
     soulchords: { g1: "#ffd45c", g2: "#c8791c", shadow: "rgba(255,212,92,.30)" },
     tears: { g1: "#7fb8ff", g2: "#e6b3ff", shadow: "rgba(185,200,255,.30)" }

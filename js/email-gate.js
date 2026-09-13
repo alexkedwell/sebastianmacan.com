@@ -32,7 +32,8 @@
     halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
     hitchords: { g1: "#f2f2f4", g2: "#8b5cf6", shadow: "rgba(139,92,246,.30)" },
     clubchords: { g1: "#4ad9ff", g2: "#ff4ad9", shadow: "rgba(74,217,255,.30)" },
-    soulchords: { g1: "#ffd45c", g2: "#c8791c", shadow: "rgba(255,212,92,.30)" }
+    soulchords: { g1: "#ffd45c", g2: "#c8791c", shadow: "rgba(255,212,92,.30)" },
+    tears: { g1: "#7fb8ff", g2: "#e6b3ff", shadow: "rgba(185,200,255,.30)" }
   };
 
   var css = "" +

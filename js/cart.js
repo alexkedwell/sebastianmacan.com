@@ -38,6 +38,7 @@
     hitchords:     { name: 'Hit Chords 500',         cents: 1500, priceId: 'pri_01m1gnsx2qvxew8czas9ym2qa4' },
     clubchords:    { name: 'Club Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxcvj6w77fanegkzwm1j' },
     soulchords:    { name: 'Soul Chords 240',        cents: 1200, priceId: 'pri_01m1gnsxngw04eejk0qr67kpmd' },
+    tears:         { name: 'Tears - Beautiful Minor Progressions', cents: 500, priceId: 'pri_01m2cjg5zh375tsdwy4pw6j8rg' },
     /* Modal Series */
     ionian:        { name: 'Ionian Mode 48',         cents: 500, priceId: 'pri_01m1gnsxxvfs2nbag2280x8ydj' },
     dorian:        { name: 'Dorian Mode 48',         cents: 500, priceId: 'pri_01m1gnsy80zd3s9wnzgxk4dtgc' },

@@ -30,11 +30,11 @@
     fauna:  { g1: "#3e9ecf", g2: "#7de8b8", shadow: "rgba(62,158,207,.30)" },
     gloss:  { g1: "#9be8c9", g2: "#f2a3c2", shadow: "rgba(155,232,201,.30)" },
     halo:   { g1: "#ffd700", g2: "#fff3b0", shadow: "rgba(255,215,0,.30)" },
-    hitmaker: { g1: "#60aaff", g2: "#9fd4ff", shadow: "rgba(96,170,255,.30)" },
-    hitmakercomplete: { g1: "#60aaff", g2: "#9fd4ff", shadow: "rgba(96,170,255,.30)" },
-    clubchords: { g1: "#4ad9ff", g2: "#ff4ad9", shadow: "rgba(74,217,255,.30)" },
+    hitmaker: { g1: "#ff3b3b", g2: "#ff8a5b", shadow: "rgba(255,59,59,.30)" },
+    hitmakercomplete: { g1: "#ff3b3b", g2: "#ff8a5b", shadow: "rgba(255,59,59,.30)" },
+    clubchords: { g1: "#e5e7eb", g2: "#9aa0a8", shadow: "rgba(154,160,168,.30)" },
     soulchords: { g1: "#ffd45c", g2: "#c8791c", shadow: "rgba(255,212,92,.30)" },
-    tears: { g1: "#7fb8ff", g2: "#e6b3ff", shadow: "rgba(185,200,255,.30)" }
+    tears: { g1: "#a855f7", g2: "#6d28d9", shadow: "rgba(168,85,247,.30)" }
   };
 
   var css = "" +

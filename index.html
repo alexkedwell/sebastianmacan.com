@@ -88,9 +88,12 @@
   .fireplace { --g1:#ff7a2f; --g2:#ffd27a; --glow:#ff7a2f; --shadow:rgba(255,122,47,.28); }
   .gloss { --g1:#8b6bff; --g2:#3df0a8; --glow:#8b6bff; --shadow:rgba(139,107,255,.26); }
   .biome  { --g1:#3ecf6e; --g2:#5ad9d0; --glow:#3ecf6e; --shadow:rgba(62,207,110,.26); }
-  .clubchords { --g1:#60a5fa; --g2:#8b5cf6; --glow:#60a5fa; --shadow:rgba(96,165,250,.26); }
+  .hitmaker { --g1:#ff3b3b; --g2:#ff8a5b; --glow:#ff3b3b; --shadow:rgba(255,59,59,.28); }
+  .clubchords { --g1:#9aa0a8; --g2:#3a3d42; --glow:#c9ced6; --shadow:rgba(154,160,168,.22); }
+  .clubchords .dl, .clubchords .cartbtn.buy { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,var(--g1),var(--g2)); }
+  .clubchords h2 { background-image:repeating-linear-gradient(135deg,rgba(0,0,0,0) 0 10px,rgba(0,0,0,.42) 10px 18px),linear-gradient(135deg,#e5e7eb,#9aa0a8); }
   .soulchords { --g1:#ffd45c; --g2:#c8791c; --glow:#ffd45c; --shadow:rgba(255,212,92,.26); }
-  .tears { --g1:#7fb8ff; --g2:#e6b3ff; --glow:#b9c8ff; --shadow:rgba(185,200,255,.28); }
+  .tears { --g1:#a855f7; --g2:#6d28d9; --glow:#a855f7; --shadow:rgba(168,85,247,.30); }
   .featgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; margin-top:16px; }
   .feat { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--card); border-radius:18px; overflow:hidden; text-decoration:none; color:var(--txt); position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
   .feat:hover { transform:translateY(-6px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
@@ -297,13 +300,13 @@
 
   <div class="sect-title" id="midi">MIDI</div>
   <div class="grid">
-    <div class="card" style="--g1:#60aaff; --g2:#9fd4ff; --glow:#60aaff; --shadow:rgba(96,170,255,.26);">
+    <div class="card hitmaker">
       <span class="new">NEW</span>
       <div class="kind">MIDI Chord Pack Series</div>
       <h2>HITMAKER CHORDS</h2>
       <p class="tag">2,972 progressions. Every genre that charts.</p>
       <p class="desc">Hit-researched chords across 20 genres plus 5 mode packs and the original Hit Chords 500, all in one download. Every progression in all 12 keys, every clip named with its chords and key. Same research DNA as Chordsmith.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=1"><source src="img/video/midi/hitmaker_demo.mp4?v=1" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/hitmaker_poster.jpg?v=2"><source src="img/video/midi/hitmaker_demo.mp4?v=2" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Hitmaker Chords &middot; $25</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="hitmaker">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="hitmaker">Buy Now</span></div>
       <a class="more" href="midi-packs.html#hitmaker">See what&#39;s inside &rarr;</a>
@@ -315,7 +318,7 @@
       <h2>CLUB CHORDS 240</h2>
       <p class="tag">Chords for the dancefloor.</p>
       <p class="desc">240 progressions built for club music: House, Techno, Dubstep, Future Bass, Drum &amp; Bass, UK Garage. 20 per genre, voiced the way each scene actually plays them.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=1"><source src="img/video/midi/clubchords_demo.mp4?v=1" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/clubchords_poster.jpg?v=2"><source src="img/video/midi/clubchords_demo.mp4?v=2" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Club Chords 240 &middot; $10</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="clubchords">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="clubchords">Buy Now</span></div>
       <a class="more" href="midi-packs.html#clubchords">See what&#39;s inside &rarr;</a>
@@ -327,10 +330,11 @@
       <h2>TEARS</h2>
       <p class="tag">Beautiful minor progressions. Get emotional.</p>
       <p class="desc">1,008 MIDI files. 42 of the most beautiful minor-key progressions in ambient, downtempo, future bass, liquid DnB and cinematic music. Extended voicings, voice-led, every key.</p>
-      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/tears_poster.jpg?v=1"><source src="img/video/midi/tears_demo.mp4?v=1" type="video/mp4"></video></div>
+      <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/video/midi/tears_poster.jpg?v=2"><source src="img/video/midi/tears_demo.mp4?v=2" type="video/mp4"></video></div>
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="tears">Buy Tears &middot; $20</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="tears">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="tears">Buy Now</span></div>
       <a class="more" href="midi-packs.html#tears">See what&#39;s inside &rarr;</a>
+      <div class="meta">1,008 .mid files · works in every DAW</div>
     </div>
     <div class="card soulchords">
       <div class="kind">MIDI Chord Pack</div>

@@ -9,7 +9,7 @@
 
   // Live endpoint: self-hosted capture service on the Mac mini, exposed via
   // Cloudflare Tunnel. See marketing/email-capture-plan.md.
-  var ENDPOINT = "https://forms.ctssystemsai.com/subscribe";
+  var ENDPOINT = "https://forms.sebastianmacan.com/subscribe";
   var TIMEOUT_MS = 6000; // never make the user wait longer than this
   var STORAGE_KEY = "sm_email_captured";
 

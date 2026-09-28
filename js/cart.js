@@ -344,11 +344,11 @@
     var price = money(p.cents);
     var title, sub;
     if (o.loud) {
-      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + ' \u2014 get the whole basket for <b>' + price + '</b>.';
+      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b>' + price + '</b>.';
       sub = others ? others + ' included.' : '';
     } else {
       var lead = o.inCart.filter(isFresh)[0] || o.inCart[0];
-      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + ' \u2014 get the whole basket, ' + CATALOG[lead].name + ' included, for <b>' + price + '</b>.';
+      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b>' + price + '</b>.';
       sub = others ? 'That\u2019s ' + others + ' too.' : '';
     }
     return '<div class="smcart-up' + (o.loud ? ' loud' : '') + '" data-up="' + o.bid + '">' +

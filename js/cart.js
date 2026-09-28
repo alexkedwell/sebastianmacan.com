@@ -330,10 +330,13 @@
       var more = CATALOG[bid].cents - have;
       if (more < 0) more = 0;
       var missing = b.items.filter(function (i) { return cart.indexOf(i) === -1; });
-      var cand = { bid: bid, inCart: inCart, missing: missing, more: more, save: full - CATALOG[bid].cents, loud: inCart.length >= 2 };
-      /* rank: covers MORE of what they already picked > cheaper upgrade > bigger saving */
-      if (!best || cand.inCart.length > best.inCart.length ||
-          (cand.inCart.length === best.inCart.length && (cand.more < best.more || (cand.more === best.more && cand.save > best.save)))) best = cand;
+      var la = lastAdded();
+      var cand = { bid: bid, inCart: inCart, missing: missing, more: more, save: full - CATALOG[bid].cents, loud: inCart.length >= 2,
+                   hasLast: la && b.items.indexOf(la) !== -1 ? 1 : 0 };
+      /* rank (Alex, Sep 23): basket containing the item they JUST added > covers more of the cart > cheaper swap > bigger saving */
+      if (!best || cand.hasLast > best.hasLast ||
+          (cand.hasLast === best.hasLast && (cand.inCart.length > best.inCart.length ||
+          (cand.inCart.length === best.inCart.length && (cand.more < best.more || (cand.more === best.more && cand.save > best.save)))))) best = cand;
     });
     return best;
   }
@@ -347,7 +350,8 @@
       title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b>' + price + '</b>.';
       sub = others ? others + ' included.' : '';
     } else {
-      var lead = o.inCart.filter(isFresh)[0] || o.inCart[0];
+      var la = lastAdded();
+      var lead = (la && o.inCart.indexOf(la) !== -1) ? la : (o.inCart.filter(isFresh)[0] || o.inCart[0]);
       title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b>' + price + '</b>.';
       sub = others ? 'That\u2019s ' + others + ' too.' : '';
     }
@@ -407,12 +411,15 @@
   function closeDrawer() { els.drawer.classList.remove('open'); els.overlay.classList.remove('open'); setMsg(''); }
   function toggleDrawer() { els.drawer.classList.contains('open') ? closeDrawer() : openDrawer(); }
 
+  var LAST_KEY = 'sm_last_added_v1';
+  function lastAdded() { try { return sessionStorage.getItem(LAST_KEY); } catch (e) { return null; } }
   function add(id, opts) {
     if (!CATALOG[id]) return;
     if (cart.indexOf(id) === -1) {
       cart.push(id);
       save(cart);
     }
+    try { sessionStorage.setItem(LAST_KEY, id); } catch (e) {}
     render();
     pulseBadge();
     if (!opts || !opts.silent) openDrawer();

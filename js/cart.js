@@ -341,21 +341,21 @@
   function offerHTML(o) {
     var b = BASKETS[o.bid], p = CATALOG[o.bid];
     var others = listNames(o.missing, b.bonus);
+    var price = money(p.cents);
     var title, sub;
     if (o.loud) {
-      title = "You're <b>" + money(o.more) + "</b> from the whole " + p.name;
+      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + ' \u2014 get the whole basket for <b>' + price + '</b>.';
       sub = others ? others + ' included.' : '';
     } else {
       var lead = o.inCart.filter(isFresh)[0] || o.inCart[0];
-      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name;
-      sub = others ? '\u2014 with ' + others + '.' : '';
+      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + ' \u2014 get the whole basket, ' + CATALOG[lead].name + ' included, for <b>' + price + '</b>.';
+      sub = others ? 'That\u2019s ' + others + ' too.' : '';
     }
     return '<div class="smcart-up' + (o.loud ? ' loud' : '') + '" data-up="' + o.bid + '">' +
       '<div class="t">' + title + '</div>' +
       (sub ? '<div class="s">' + sub + '</div>' : '') +
-      '<div class="m">' + (o.loud ? 'Complete it for ' : 'Upgrade for ') + money(o.more) + ' more' +
-      (o.save > 0 ? ' <span class="save">\u00b7 save ' + money(o.save) + '</span>' : '') + '</div>' +
-      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">' + (o.loud ? 'Complete the basket' : 'Upgrade to basket') + '</button>' +
+      (o.save > 0 ? '<div class="m"><span class="save" style="margin-left:0">Save ' + money(o.save) + '</span> vs buying one by one</div>' : '') +
+      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Get the basket \u00b7 ' + price + '</button>' +
       '<button class="no" data-up-no="' + o.bid + '">No thanks</button></div></div>';
   }
 

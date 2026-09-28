@@ -140,21 +140,32 @@
     '#smcart-checkout:disabled{opacity:.45;cursor:default;transform:none;}',
     '#smcart-msg{color:#ffd84a;font-size:12.5px;margin-top:10px;display:none;line-height:1.5;}',
     '#smcart-msg.on{display:block;}',
-    /* basket upgrade card (in-drawer) */
-    '.smcart-up{margin:12px 0 4px;padding:14px 14px 12px;border-radius:14px;border:1px solid #2a2a32;',
-    ' background:linear-gradient(135deg,rgba(123,92,255,.14),rgba(57,230,208,.08));position:relative;}',
-    '.smcart-up.loud{border-color:#39e6d0;box-shadow:0 0 0 1px rgba(57,230,208,.25),0 8px 30px rgba(57,230,208,.12);}',
-    '.smcart-up .t{font-size:13.5px;font-weight:900;line-height:1.35;}',
-    '.smcart-up .t b{background:linear-gradient(120deg,#ff3d5a,#7b5cff,#39e6d0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}',
-    '.smcart-up .s{font-size:12.5px;color:#b9b9c4;margin-top:4px;line-height:1.45;}',
-    '.smcart-up .m{font-size:13px;font-weight:800;margin-top:8px;}',
-    '.smcart-up .m .save{color:#39e6d0;font-weight:900;margin-left:6px;}',
-    '.smcart-up .btns{display:flex;gap:8px;margin-top:10px;}',
-    '.smcart-up .go{flex:1;border:0;border-radius:999px;padding:10px 12px;cursor:pointer;font-size:12.5px;font-weight:900;letter-spacing:.04em;color:#fff;',
-    ' background:linear-gradient(135deg,#7b5cff,#39e6d0);transition:transform .15s;}',
+    /* basket DEAL DROP: pinned to the bottom of the drawer above the footer, candy mascot leaning in */
+    '#smcart-deal{flex:none;padding:0 14px 10px;}',
+    '.smcart-up{position:relative;border-radius:18px;padding:16px 16px 14px 16px;overflow:visible;',
+    ' background:#15151b;border:1.5px solid transparent;',
+    ' background-image:linear-gradient(#15151b,#15151b),linear-gradient(120deg,#ff3d5a,#ffd84a,#39e6d0,#7b5cff,#ff3d5a);',
+    ' background-origin:border-box;background-clip:padding-box,border-box;background-size:100% 100%,300% 100%;',
+    ' animation:smdeal-rim 6s linear infinite, smdeal-in .45s cubic-bezier(.2,.9,.3,1.2) both;',
+    ' box-shadow:0 -10px 40px rgba(0,0,0,.45),0 0 28px rgba(123,92,255,.18);}',
+    '@keyframes smdeal-rim{0%{background-position:0 0,0% 50%}100%{background-position:0 0,300% 50%}}',
+    '@keyframes smdeal-in{0%{transform:translateY(24px);opacity:0}100%{transform:none;opacity:1}}',
+    '.smcart-up .candy{position:absolute;right:-6px;top:-30px;width:84px;height:84px;pointer-events:none;',
+    ' filter:drop-shadow(0 8px 16px rgba(0,0,0,.55));animation:smdeal-bob 3.2s ease-in-out infinite;}',
+    '@keyframes smdeal-bob{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-4px)}}',
+    '.smcart-up .kick{font-size:10.5px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#ffd84a;margin-bottom:6px;}',
+    '.smcart-up .t{font-size:13.5px;font-weight:800;line-height:1.4;padding-right:64px;color:#f2f2f4;}',
+    '.smcart-up .t b{color:#fff;}',
+    '.smcart-up .t b.px{color:#39e6d0;}',
+    '.smcart-up .s{font-size:12px;color:#9a9aa6;margin-top:4px;line-height:1.45;padding-right:64px;}',
+    '.smcart-up .btns{display:flex;gap:8px;margin-top:12px;align-items:center;}',
+    '.smcart-up .go{flex:1;border:0;border-radius:999px;padding:11px 12px;cursor:pointer;font-size:12.5px;font-weight:900;letter-spacing:.04em;color:#0a0a0c;',
+    ' background:linear-gradient(135deg,#ffd84a,#39e6d0);transition:transform .15s;white-space:nowrap;}',
     '.smcart-up .go:hover{transform:translateY(-1px);}',
-    '.smcart-up .no{border:1px solid #2a2a32;background:none;border-radius:999px;padding:10px 12px;cursor:pointer;font-size:12.5px;font-weight:700;color:#8a8a94;}',
+    '.smcart-up .go .sv{font-weight:800;opacity:.75;margin-left:6px;}',
+    '.smcart-up .no{border:0;background:none;padding:10px 6px;cursor:pointer;font-size:12px;font-weight:700;color:#6f6f7a;text-decoration:underline;text-underline-offset:3px;}',
     '.smcart-up .no:hover{color:#f2f2f4;}',
+    '.smcart-up.loud .kick{color:#39e6d0;}',
     /* product-page "Also in" chips */
     '.smchips{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;justify-content:center;margin:12px auto 0;max-width:640px;font-size:12px;color:#8a8a94;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;}',
     '.smchips .lbl{font-weight:700;margin-right:2px;}',
@@ -238,6 +249,7 @@
       '<div class="smhead"><h2>Your Candy Bag</h2>' +
       '<button id="smcart-close" aria-label="Close cart">&times;</button></div>' +
       '<div id="smcart-items"></div>' +
+      '<div id="smcart-deal"></div>' +
       '<div id="smcart-foot">' +
       '  <div id="smcart-sub"><span>Subtotal</span><span class="amt">$0</span></div>' +
       '  <div id="smcart-taxnote">Prices in USD. Any tax or VAT is added at checkout by Paddle, our merchant of record.</div>' +
@@ -251,6 +263,7 @@
     els.overlay = overlay;
     els.drawer = drawer;
     els.items = drawer.querySelector('#smcart-items');
+    els.deal = drawer.querySelector('#smcart-deal');
     els.sub = drawer.querySelector('#smcart-sub .amt');
     els.checkout = drawer.querySelector('#smcart-checkout');
     els.msg = drawer.querySelector('#smcart-msg');
@@ -345,21 +358,25 @@
     var b = BASKETS[o.bid], p = CATALOG[o.bid];
     var others = listNames(o.missing, b.bonus);
     var price = money(p.cents);
-    var title, sub;
+    var title, sub, kick;
     if (o.loud) {
-      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b>' + price + '</b>.';
+      kick = 'Sweet deal';
+      title = '<b>' + listNames(o.inCart) + '</b> are in the ' + p.name + '. Get the whole basket for <b class="px">' + price + '</b>.';
       sub = others ? others + ' included.' : '';
     } else {
+      kick = 'Basket deal';
       var la = lastAdded();
       var lead = (la && o.inCart.indexOf(la) !== -1) ? la : (o.inCart.filter(isFresh)[0] || o.inCart[0]);
-      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b>' + price + '</b>.';
+      title = '<b>' + CATALOG[lead].name + '</b> is in the ' + p.name + '. Get the whole basket, ' + CATALOG[lead].name + ' included, for <b class="px">' + price + '</b>.';
       sub = others ? 'That\u2019s ' + others + ' too.' : '';
     }
     return '<div class="smcart-up' + (o.loud ? ' loud' : '') + '" data-up="' + o.bid + '">' +
+      '<img class="candy" src="/img/candy-deal.png" alt="">' +
+      '<div class="kick">' + kick + '</div>' +
       '<div class="t">' + title + '</div>' +
       (sub ? '<div class="s">' + sub + '</div>' : '') +
-      (o.save > 0 ? '<div class="m"><span class="save" style="margin-left:0">Save ' + money(o.save) + '</span> vs buying one by one</div>' : '') +
-      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Get the basket \u00b7 ' + price + '</button>' +
+      '<div class="btns"><button class="go" data-up-go="' + o.bid + '">Get the basket \u00b7 ' + price +
+      (o.save > 0 ? '<span class="sv">save ' + money(o.save) + '</span>' : '') + '</button>' +
       '<button class="no" data-up-no="' + o.bid + '">No thanks</button></div></div>';
   }
 
@@ -388,8 +405,12 @@
           '<button class="smcart-rm" data-cart-remove="' + id + '" aria-label="Remove ' + p.name + '">&times;</button>' +
           '</div></div>';
       }).join('');
-      var offer = bestOffer();
-      if (offer) els.items.innerHTML += offerHTML(offer);
+    }
+    var offer = n ? bestOffer() : null;
+    var key = offer ? offer.bid + ':' + cart.join(',') : '';
+    if (els.deal.getAttribute('data-key') !== key) {
+      els.deal.innerHTML = offer ? offerHTML(offer) : '';
+      els.deal.setAttribute('data-key', key);
     }
     var total = cart.reduce(function (s, id) { return s + CATALOG[id].cents; }, 0);
     els.sub.textContent = money(total);
@@ -516,6 +537,8 @@
     els.items.addEventListener('click', function (e) {
       var btn = e.target.closest('[data-cart-remove]');
       if (btn) return remove(btn.getAttribute('data-cart-remove'));
+    });
+    els.deal.addEventListener('click', function (e) {
       var go = e.target.closest('[data-up-go]');
       if (go) return upgradeTo(go.getAttribute('data-up-go'));
       var no = e.target.closest('[data-up-no]');

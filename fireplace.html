@@ -175,7 +175,7 @@
     <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Sound on.</div>
   </div>
 <script>
-(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(){if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();
+(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();
 </script>
 
   <h2>What Fireplace does</h2>

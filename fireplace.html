@@ -43,6 +43,12 @@
   .play::after { content:""; position:absolute; left:8px; top:5px; border-left:8px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent; }
   [data-vid].on .play { display:none; }
   .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
+  .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
+  .vidstack .big .seek i { position:absolute; left:10px; right:10px; bottom:9px; height:3px; background:rgba(255,255,255,.25); border-radius:2px; display:block; }
+  .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
+  .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
+  .vidstack .big.on span { opacity:0; }
   .pitch { font-size:20px; line-height:1.45; color:var(--text); }
   .pitch b { color:var(--g1); }
   .videobox { margin:30px auto 8px; border-radius:20px; overflow:hidden; border:1px solid var(--line);
@@ -181,7 +187,7 @@
     <div class="vidhint">Tap a room to hear the actual recording, straight out of the plugin. Sound on.</div>
   </div>
 <script>
-(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();
+(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');var big=box.classList.contains('big');var bar=null,fill=null,tm=null;if(big){bar=document.createElement('div');bar.className='seek';fill=document.createElement('i');bar.appendChild(fill);tm=document.createElement('b');bar.appendChild(tm);box.appendChild(bar);var seekTo=function(ev){var r=bar.getBoundingClientRect();var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;var p=Math.max(0,Math.min(1,x/r.width));if(v.duration)v.currentTime=p*v.duration;};var drag=false;bar.addEventListener('mousedown',function(ev){ev.stopPropagation();drag=true;seekTo(ev);});window.addEventListener('mousemove',function(ev){if(drag)seekTo(ev);});window.addEventListener('mouseup',function(){drag=false;});bar.addEventListener('touchstart',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('touchmove',function(ev){ev.stopPropagation();seekTo(ev);},{passive:true});bar.addEventListener('click',function(ev){ev.stopPropagation();});var fmt=function(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2);};v.addEventListener('timeupdate',function(){if(v.duration){fill.style.setProperty('--p',(100*v.currentTime/v.duration)+'%');tm.textContent=fmt(v.currentTime)+' / '+fmt(v.duration);}});v.addEventListener('loadedmetadata',function(){tm.textContent='0:00 / '+fmt(v.duration);});}box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');if(!big)v.load();});});})();
 </script>
 
   <h2>What Fireplace does</h2>

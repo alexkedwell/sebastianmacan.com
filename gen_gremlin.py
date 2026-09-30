@@ -17,7 +17,14 @@ VIDCSS = '''  .vidstack { margin:26px 0 6px; }
   .sm, .big { cursor:pointer; }
   .play { position:absolute; right:8px; top:8px; width:22px; height:22px; border-radius:50%; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.35); }
   .play::after { content:""; position:absolute; left:8px; top:5px; border-left:8px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent; }
-  [data-vid].on .play { display:none; }'''
+  [data-vid].on .play { display:none; }
+  .vidhint { font-size:12px; color:var(--muted,#9a8f86); margin-top:8px; letter-spacing:.04em; }
+  .vidstack .big .seek { position:absolute; left:0; right:0; bottom:0; height:26px; background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0)); cursor:pointer; opacity:0; transition:opacity .25s; }
+  .vidstack .big:hover .seek, .vidstack .big.on .seek { opacity:1; }
+  .vidstack .big .seek i { position:absolute; left:10px; right:10px; bottom:9px; height:3px; background:rgba(255,255,255,.25); border-radius:2px; display:block; }
+  .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
+  .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
+  .vidstack .big.on span { opacity:0; }'''
 JS = "(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();"
 h = open(f"{S}/reels.html").read()
 

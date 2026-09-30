@@ -80,7 +80,7 @@ body = '''  <section class="hero">
     <div class="big" data-vid><video preload="none" playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="img/video/gremlin_demo.mp4?v=3.1.0" type="video/mp4"></video><span>Before / after</span><i class="play"></i></div>
     <div class="vidrow three">
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_chop.jpg?v=3.1.0"><source src="img/video/gremlin_chop.mp4?v=3.1.0" type="video/mp4"></video><span>Chop</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_stutter.jpg?v=3.1.0"><source src="img/video/gremlin_stutter.mp4?v=3.1.0" type="video/mp4"></video><span>Stutter</span><i class="play"></i></div>
+      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_stutter.jpg?v=3.1.0b"><source src="img/video/gremlin_stutter.mp4?v=3.1.0" type="video/mp4"></video><span>Stutter</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_smear.jpg?v=3.1.0"><source src="img/video/gremlin_smear.mp4?v=3.1.0" type="video/mp4"></video><span>Smear</span><i class="play"></i></div>
     </div>
     <div class="vidhint">Tap a gremlin to hear it. Two bars dry, then it bites. Sound on.</div>
@@ -91,7 +91,7 @@ body = '''  <section class="hero">
 
   <h2>Get started in 3 steps</h2>
   <div class="step"><b>1. Put Gremlin on a loop.</b> Drums are the classic. It opens on Init: Stutter only, at 1/8, so you hear it working immediately.</div>
-  <div class="step"><b>2. Flip through the three sections.</b> CHOP for rhythmic holes, STUTTER for repeats and pitch tricks, SMEAR to melt it into reverb. Each section keeps its own settings.</div>
+  <div class="step"><b>2. Switch on the gremlins you want.</b> CHOP for rhythmic holes, STUTTER for repeats and pitch tricks, SMEAR to melt it into reverb. Run one, or all three at once; each keeps its own settings.</div>
   <div class="step"><b>3. Raid the presets.</b> Machine Gun, Frozen Lake, Full Meltdown. Find one that ruins your loop in the right way, then tweak and save your own.</div>
 
   <h2>Make it yours</h2>

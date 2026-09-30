@@ -43,7 +43,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
   {
    "@type": "SoftwareApplication",
    "name": "Gremlin",
-   "operatingSystem": "macOS",
+   "operatingSystem": "macOS, Windows",
    "applicationCategory": "MultimediaApplication",
    "applicationSubCategory": "Audio plugin (VST3, AU)",
    "description": "Gremlin is the glitch box for beats: tempo-synced chops, pitched stutters and granular smear into a plate reverb. One plugin, three switchable sections. By Sebastian Macan.",
@@ -62,7 +62,7 @@ h = re.sub(r'<script type="application/ld\+json">.*?</script>', '''<script type=
     { "@type": "Question", "name": "What DAWs does Gremlin work in?",
       "acceptedAnswer": { "@type": "Answer", "text": "Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more. Logic and GarageBand pick up the AU version automatically." } },
     { "@type": "Question", "name": "Is there a Windows version of Gremlin?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The Windows build is being finished right now. macOS is live today and Windows lands soon. Join the email list when you buy and you will hear the moment it drops." } }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gremlin ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms." } }
    ]
   }
  ]
@@ -77,7 +77,7 @@ body = '''  <section class="hero">
     <div class="videobox"><video autoplay muted loop playsinline poster="img/ui/gremlin.png?v=3.1.0"><source src="img/video/gremlin_ui_loop.mp4?v=3.1.0" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="gremlin">Buy Gremlin &middot; $15</span>
-      <div class="meta">v3.1.0 &middot; VST3 + AU effect &middot; macOS</div>
+      <div class="meta">v3.1.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
     </div>
   </section>
 
@@ -122,7 +122,7 @@ body = '''  <section class="hero">
   <div class="knob"><b>How much is Gremlin?</b> $15, one-time. Instant download after checkout. Full version, no locked knobs, no subscription.</div>
   <div class="knob"><b>Is Gremlin three plugins?</b> No. One plugin with three switchable sections: CHOP, STUTTER and SMEAR. All three sit side by side, each with its own ON switch, so you can run one, two or all three at once.</div>
   <div class="knob"><b>What DAWs does Gremlin work in?</b> Any DAW that loads VST3 or AU plugins: Ableton Live, Logic Pro, FL Studio, GarageBand, Reaper, Studio One and more.</div>
-  <div class="knob"><b>Is there a Windows version of Gremlin?</b> The Windows build is being finished right now. macOS is live today and Windows lands soon. Join the email list when you buy and you will hear the moment it drops.</div>
+  <div class="knob"><b>Is there a Windows version of Gremlin?</b> Yes. Gremlin ships for macOS (VST3 + AU) and Windows (VST3), code-signed on both. One purchase covers both platforms.</div>
   <div class="knob"><b>How do I install Gremlin?</b> Run the installer and it puts the plugin files in the right folders. Restart your DAW, rescan if needed, done.</div>
 
   <div class="cta">

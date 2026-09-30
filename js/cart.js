@@ -494,7 +494,8 @@
     loadPaddle().then(function (Paddle) {
       Paddle.Checkout.open({
         items: ids.map(function (id) { return { priceId: CATALOG[id].priceId, quantity: 1 }; }),
-        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en' }
+        settings: { displayMode: 'overlay', theme: 'dark', locale: 'en',
+          successUrl: 'https://dl.sebastianmacan.com/claim?txn={transaction_id}' }
       });
     }).catch(function (e) {
       openDrawer();

@@ -25,7 +25,9 @@ VIDCSS = '''  .vidstack { margin:26px 0 6px; }
   .vidstack .big .seek i { background:linear-gradient(90deg,var(--g1),var(--g2)) no-repeat, rgba(255,255,255,.25); background-size:var(--p,0%) 100%, 100% 100%; }
   .vidstack .big .seek b { position:absolute; right:12px; bottom:14px; font-size:11px; font-weight:600; color:#fff; letter-spacing:.04em; text-shadow:0 1px 4px rgba(0,0,0,.9); }
   .vidstack .big.on span { opacity:0; }'''
-JS = "(function(){var vids=document.querySelectorAll('[data-vid] video');document.querySelectorAll('[data-vid]').forEach(function(box){var v=box.querySelector('video');box.addEventListener('click',function(ev){ev.preventDefault();if(v.paused){vids.forEach(function(o){if(o!==v){o.pause();o.parentNode.classList.remove('on');}});v.muted=false;v.play();box.classList.add('on');}else{v.pause();box.classList.remove('on');}});v.addEventListener('click',function(ev){ev.stopPropagation();box.click();});v.addEventListener('ended',function(){box.classList.remove('on');v.load();});});})();"
+_fp = open(f"{S}/fireplace.html").read()
+_i = _fp.index("(function(){var vids="); _j = _fp.index("</script>", _i)
+JS = _fp[_i:_j].strip()
 h = open(f"{S}/reels.html").read()
 
 h = h.replace("--g1:#e8a05c; --g2:#f5d7a1;", "--g1:#2ed14f; --g2:#c9ff4a;")

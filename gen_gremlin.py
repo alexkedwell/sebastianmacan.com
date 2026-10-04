@@ -87,12 +87,8 @@ body = '''  <section class="hero">
   <h2>Three sections, one box</h2>
   <div class="vidstack">
     <div class="big" data-vid><video preload="none" playsinline poster="img/ui/gremlin_demo.jpg?v=3.1.0d"><source src="img/video/gremlin_demo.mp4?v=3.1.0d" type="video/mp4"></video><span>Before / after, in Ableton</span><i class="play"></i></div>
-    <div class="vidrow three">
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_chop.jpg?v=3.1.0c"><source src="img/video/gremlin_chop.mp4?v=3.1.0c" type="video/mp4"></video><span>Chop</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_stutter.jpg?v=3.1.0c"><source src="img/video/gremlin_stutter.mp4?v=3.1.0c" type="video/mp4"></video><span>Stutter</span><i class="play"></i></div>
-      <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/gremlin_smear.jpg?v=3.1.0c"><source src="img/video/gremlin_smear.mp4?v=3.1.0c" type="video/mp4"></video><span>Smear</span><i class="play"></i></div>
-    </div>
-    <div class="vidhint">Tap a gremlin to hear it. Two bars dry, then it bites. Sound on.</div>
+    <div class="big" data-vid style="margin-top:12px"><video preload="none" playsinline poster="img/ui/gremlin_production.jpg?v=1"><source src="img/video/gremlin_production.mp4?v=1" type="video/mp4"></video><span>Sebastian using Gremlin in his production</span><i class="play"></i></div>
+    <div class="vidhint">Tap to play. Sound on.</div>
   </div>
   <div class="bot"><b>CHOP.</b> A tempo-synced gate and slicer. Pick a rate from 1/4 down to 1/32, set the GATE length, choose a pattern or roll a new one with the seed. Instant trance gates, triplet holes and rhythmic silence that always lands on the grid.</div>
   <div class="bot"><b>STUTTER.</b> Buffer repeats on demand. RATE sets the slice, REPEATS how many times it fires, REVERSE flips them backwards, and PITCH is true pitch from -12 to +12 semitones. Every repeat in a burst shares one interval, so stutters stay musical instead of turning to mush. Noon is 0 st, plain repeats.</div>

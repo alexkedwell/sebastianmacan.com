@@ -80,6 +80,20 @@
   .bot b { color:var(--g2); }
   footer { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 40px; color:var(--dim); font-size:13px; text-align:center; }
   footer a { color:var(--dim); }
+  /* In the studio — real recording of Sebastian using the plugin */
+  .studio { margin:34px auto 6px; max-width:920px; }
+  .studio .label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--g1); margin-bottom:12px; }
+  .studio .label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--g1),transparent); opacity:.5; }
+  .studio .frame { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:#000; box-shadow:0 20px 70px rgba(96,170,255,.18); }
+  .studio video { display:block; width:100%; height:auto; }
+  .studio .play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; cursor:pointer; background:radial-gradient(ellipse at center, rgba(0,0,0,.05), rgba(0,0,0,.45)); transition:opacity .25s; }
+  .studio .play span { width:84px; height:84px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 10px 40px rgba(96,170,255,.45); transition:transform .15s; }
+  .studio .play span::before { content:""; border-style:solid; border-width:15px 0 15px 26px; border-color:transparent transparent transparent #0a0a0c; margin-left:6px; }
+  .studio .play:hover span { transform:scale(1.07); }
+  .studio.playing .play { opacity:0; pointer-events:none; }
+  .studio .sound { position:absolute; top:14px; right:14px; font-size:11px; font-weight:800; letter-spacing:.1em; color:#0a0a0c; background:var(--g1); padding:6px 10px; border-radius:999px; }
+  .studio .cap { color:var(--dim); font-size:15px; margin:12px 4px 0; line-height:1.55; }
+  .studio .cap b { color:var(--txt); }
 </style>
 <script type="application/ld+json">
 {
@@ -179,8 +193,22 @@
   <h2>Duck anything. Bring your own texture.</h2>
   <p class="pitch">Drop <b>any sound</b> on Fireplace and it becomes an <b>endless, never-looping texture bed</b> that <b>ducks under your music</b>. A two second wind sample. Leaves. Your own vinyl crackle. Fireplace stretches it into a seamless atmosphere that plays for hours without a single repeat, listens to your beat, and tucks itself under every hit. Save it as a preset and it is yours forever.</p>
 
+  <div class="studio" id="studio">
+    <div class="label">Your Texture &middot; Drop in any sound, it plays forever</div>
+    <div class="frame">
+      <video id="studioVid" playsinline preload="metadata" poster="img/ui/fireplace_texture.jpg?v=1" controlslist="nodownload"><source src="img/video/fireplace_texture.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Birds, then crickets at night.</b> Two of Sebastian's own recordings dropped straight onto Fireplace in Ableton. Not presets: any sound you own becomes an endless bed.</p>
+  </div>
+  <script>
+    (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+  </script>
+
   <div class="vidstack">
-    <div class="big"><img src="img/ui/fireplace_room_texture.jpg?v=1.7" alt="Fireplace Your Texture room with a dropped sample"><span>Your Texture: drop a sound, get an endless bed</span></div>
     <div class="vidrow three">
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_fire.jpg?v=1.7g"><source src="img/video/fireplace_room_fire.mp4?v=1.7g" type="video/mp4"></video><span>Fireplace</span><i class="play"></i></div>
       <div class="sm" data-vid><video preload="none" playsinline poster="img/ui/fireplace_room_rain.jpg?v=1.7g"><source src="img/video/fireplace_room_rain.mp4?v=1.7g" type="video/mp4"></video><span>Rain on Window</span><i class="play"></i></div>

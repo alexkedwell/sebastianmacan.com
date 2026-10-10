@@ -173,6 +173,20 @@
     p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
     v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
   </script>
+  <div class="studio" id="studio2">
+    <div class="label">In the studio &middot; Using Jelly in production</div>
+    <div class="frame">
+      <video id="studioVid2" playsinline preload="metadata" poster="img/ui/jelly_production.jpg?v=1" controlslist="nodownload"><source src="img/video/jelly_production.mp4?v=1" type="video/mp4"></video>
+      <div class="play" id="studioPlay2" aria-label="Play"><span></span></div>
+      <div class="sound">&#9654; WITH SOUND</div>
+    </div>
+    <p class="cap"><b>Jelly on drums inside a full arrangement.</b> Real session, real audio.</p>
+  </div>
+  <script>
+    (function(){var v=document.getElementById('studioVid2'),w=document.getElementById('studio2'),p=document.getElementById('studioPlay2');
+    p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});
+    v.addEventListener('pause',function(){if(!v.ended)w.classList.remove('playing');});v.addEventListener('ended',function(){w.classList.remove('playing');});})();
+  </script>
   <h2>What Jelly does</h2>
   <p>Jelly is one huge wobbling blob that drives filter, tremolo, pitch jiggle and pan wiggle from a single tempo-synced motion. Grab the blob, everything jiggles together, and it always lands on the beat.</p>
 

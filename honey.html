@@ -116,7 +116,7 @@
     <div class="faces">
       <span class="face on" data-face="cassette">CASSETTE</span><span class="face" data-face="studio">STUDIO</span><span class="face" data-face="walkman">WALKMAN</span>
     </div>
-    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=1.0.0" type="video/mp4"></video></div>
+    <div class="videobox"><video id="honeyface" autoplay muted loop playsinline poster="img/ui/honey_cassette.png?v=1.0.0"><source src="img/video/honey_face_cassette.mp4?v=fix2" type="video/mp4"></video></div>
     <div class="cta">
       <span class="dl buy" role="button" tabindex="0" data-cart-buy="honey">Buy Honey &middot; $15</span>
       <div class="meta">v1.0.0 &middot; VST3 + AU effect &middot; macOS + Windows</div>
@@ -170,6 +170,6 @@
 </div>
 <script src="js/cart.js?v=p14" defer></script>
 <script src="js/email-gate.js" defer></script>
-<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=1.0.0";i.load();i.play();});});</script>
+<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.poster="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.querySelector("source").src="img/video/honey_face_"+f.dataset.face+".mp4?v=fix2";i.load();i.play();});});</script>
 </body>
 </html>

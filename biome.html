@@ -193,27 +193,12 @@
   <div class="studio" id="studio">
     <div class="label">In the studio &middot; Sebastian building a texture</div>
     <div class="frame">
-      <video id="studioVid" playsinline preload="metadata" poster="img/video/biome_studio_texture_poster.jpg?v=v8" controlslist="nodownload"><source src="img/video/biome_studio_texture.mp4?v=v6" type="video/mp4"></video>
+      <video id="studioVid" playsinline preload="metadata" poster="img/video/biome_studio_texture_poster.jpg?v=v9" controlslist="nodownload"><source src="img/video/biome_studio_texture.mp4?v=v6" type="video/mp4"></video>
       <div class="play" id="studioPlay" aria-label="Play"><span></span></div>
       <div class="sound">&#9654; WITH SOUND</div>
     </div>
     <p class="cap"><b>Real session, real audio.</b> This is how textures get made.</p>
   </div>
-  <div class="studio biome-places">
-    <div class="label">Where the sound lives</div>
-    <div class="places">
-      <img src="img/biome_ferns_falls.jpg?v=1" alt="Ferns beside a rainforest waterfall" loading="lazy">
-      <img src="img/biome_creek.jpg?v=1" alt="A creek running through the rainforest" loading="lazy">
-      <img src="img/biome_aerial_falls.jpg?v=1" alt="Waterfall falling into a green valley" loading="lazy">
-    </div>
-    <p class="cap"><b>Drop a field recording in.</b> Biome grows the rest of the forest around it.</p>
-  </div>
-  <style>
-    .biome-places .places { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
-    .biome-places .places img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:16px; border:1px solid var(--line); box-shadow:0 14px 40px rgba(0,0,0,.35); transition:transform .35s ease; }
-    .biome-places .places img:hover { transform:translateY(-4px) scale(1.02); }
-    @media (max-width:640px) { .biome-places .places { grid-template-columns:1fr; } }
-  </style>
   <script>
     (function(){var v=document.getElementById('studioVid'),w=document.getElementById('studio'),p=document.getElementById('studioPlay');
     p.addEventListener('click',function(){v.setAttribute('controls','');v.play();});v.addEventListener('play',function(){w.classList.add('playing');});

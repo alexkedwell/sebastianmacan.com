@@ -50,9 +50,9 @@ BASKETS = [
     {
         "file": "basket-lofi.html", "cart_id": "lofibasket", "title": "LOFI BASKET", "price": 30, "img": "img/bundles/lofi_bundle.png",
         "g1": "#f5a623", "g2": "#2bb59a",
-        "tag": "The complete lofi mood. A crackling room, a weird little songbird and smooth tape.",
-        "desc": "Fireplace lays a living room of atmosphere under the beat. Warble makes your keys sing like a weird little bird. Honey puts the chords on smooth tape. The bedroom lofi mood in three plugins.",
-        "items": ["Fireplace", "Warble", "Honey"],
+        "tag": "The complete lofi mood. A crackling room and a weird little songbird.",
+        "desc": "Fireplace lays a living room of atmosphere under the beat. Warble makes your keys sing like a weird little bird. The bedroom lofi mood in two plugins.",
+        "items": ["Fireplace", "Warble"],
         "meta": "2 plugins · VST3 + AU · macOS",
         "big_dl": ("Download the whole basket", "downloads/LofiBundle-SebastianMacan.zip"),
     },

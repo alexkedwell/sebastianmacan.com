@@ -7,8 +7,8 @@ tpl = open(f"{S}/reels.html").read()
 
 # ---------- HONEY ----------
 h = tpl
-h = h.replace("--g1:#e8a05c; --g2:#f5d7a1;", "--g1:#f0a04a; --g2:#ffd98a;")
-h = h.replace("rgba(232,160,92,.26)", "rgba(240,160,74,.30)")
+h = h.replace("--g1:#e8a05c; --g2:#f5d7a1;", "--g1:#d4712f; --g2:#e8d9bb;")
+h = h.replace("rgba(232,160,92,.26)", "rgba(212,113,47,.30)")
 h = h.replace("<title>Reels | Tape Emulation VST3/AU Plugin</title>", "<title>Honey | Tape Smoothness for Chords, Pads and Melodies (VST3/AU)</title>")
 h = h.replace('content="Reels is a tape machine plugin (VST3 and AU for macOS). Real tape saturation, wow and flutter, in the box. By Sebastian Macan."',
               'content="Honey is a tape plugin built on real tape physics. Tape smoothness for chords, pads and melodies. Real tape physics, dialled for drums. VST3 and AU. By Sebastian Macan."')
@@ -103,7 +103,7 @@ h = h.replace("  .videobox video { display:block; width:100%; height:auto; }",
  "  .faces { display:flex; justify-content:center; gap:8px; margin-top:22px; }\n"
  "  .face { cursor:pointer; user-select:none; font-size:12px; font-weight:800; letter-spacing:.14em; padding:9px 18px; border-radius:999px; border:1px solid var(--line); color:var(--dim); background:var(--card); transition:all .15s; }\n"
  "  .face:hover { color:var(--txt); }\n"
- "  .face.on { color:#1a1208; background:linear-gradient(135deg,var(--g1),var(--g2)); border-color:transparent; box-shadow:0 6px 24px rgba(240,160,74,.30); }")
+ "  .face.on { color:#1a1208; background:linear-gradient(135deg,var(--g1),var(--g2)); border-color:transparent; box-shadow:0 6px 24px rgba(212,113,47,.30); }")
 h = h.replace('<script src="js/email-gate.js" defer></script>',
  '<script src="js/email-gate.js" defer></script>\n<script>document.querySelectorAll(".face").forEach(function(f){f.addEventListener("click",function(){document.querySelectorAll(".face").forEach(function(x){x.classList.remove("on")});f.classList.add("on");var i=document.getElementById("honeyface");i.src="img/ui/honey_"+f.dataset.face+".png?v=1.0.0";i.alt="Honey tape plugin, "+f.dataset.face+" face";});});</script>')
 open(f"{S}/honey.html", "w").write(h); print("wrote honey.html", len(h))

@@ -9,6 +9,7 @@ ITEMS = {
   "gloss":     ("Instant Mix Polish", "Gloss", "Four knobs that make tracks sit right in the mix, fast.", 19, "gloss.html"),
   "orbit":     ("3D Auto-Pan", "Orbit", "Hats that fly around your head. Free forever, and in the basket anyway.", 0, "orbit.html"),
   "fireplace": ("Ambience", "Fireplace", "Eight real rooms recorded on tape. Put your track somewhere.", 15, "fireplace.html"),
+  "honey":     ("Tape Smoothness", "Honey", "Tape smoothness for chords, pads and melodies. Three machines, three faces.", 15, "honey.html"),
   "pocket":    ("Snare Depth", "Pocket", "Puts your snare in the mix instead of on top of it.", 15, "pocket.html"),
 }
 BASKETS = [
@@ -27,9 +28,9 @@ BASKETS = [
   dict(file="basket-studio.html", cid="studiobasket", title="STUDIO TOOLS BASKET", name="Studio Tools Basket", price=35,
        img="img/bundles/studio_bundle.png?v=5", g1="#f5a623", g2="#60a5fa",
        tag="The finishing tools. Atmosphere, smooth tape and mix polish.",
-       desc="Fireplace lays a living room of atmosphere under the beat. Gloss makes every track sit right. From rough idea to finished mix, one basket.",
-       items=["fireplace", "gloss"], meta="3 plugins · VST3 + AU · macOS + Windows",
-       mdesc="Fireplace and Gloss. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
+       desc="Fireplace lays a living room of atmosphere under the beat. Honey puts the chords on smooth tape. Gloss makes every track sit right. From rough idea to finished mix, one basket.",
+       items=["fireplace", "gloss", "honey"], meta="3 plugins · VST3 + AU · macOS + Windows",
+       mdesc="Fireplace, Gloss and Honey. The Sebastian Macan finishing tools, one basket, VST3 + AU."),
 ]
 def row(k):
     kind, name, tag, price, page = ITEMS[k]

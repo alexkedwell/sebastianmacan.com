@@ -7,8 +7,8 @@ S = os.path.dirname(os.path.abspath(__file__))
 h = open(f"{S}/gremlin.html").read()
 
 # palette: orange + cream from the Pocket UI
-h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#f26d6a; --g2:#8fd9a8;")
-h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(242,109,106,\1)", h)
+h = h.replace("--g1:#2ed14f; --g2:#c9ff4a;", "--g1:#4f97e8; --g2:#e7d6bb;")
+h = re.sub(r"rgba\(46,209,79,(\.\d+)\)", r"rgba(79,151,232,\1)", h)
 
 h = h.replace("<title>Gremlin | Glitch, Stutter and Granular Mangler VST3/AU Plugin</title>",
               "<title>Pocket | Snare Depth VST3/AU Plugin</title>")

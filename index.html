@@ -713,11 +713,11 @@
       <a class="more" href="orbit.html">See how it works &rarr;</a>
     </div>
   </div>
-  <div class="candybag" id="candybag">
+  <div class="candybag" id="candybag" style="cursor:pointer">
     <div class="stagewrap"><div class="candystage" aria-hidden="true">
       <img class="bagback" src="img/candyad/bag_back.png" alt="">
       <img class="candy cl" src="img/candyad/candy_scrap_sky.png" alt="">
-      <img class="candy cr" src="img/candyad/candy_orbit_yellow.png" alt="">
+      <img class="candy cr" src="img/candyad/candy_orbit_fest.png" alt="">
       <img class="candy cf" src="img/candyad/candy_chop.png" alt="">
       <img class="bagfront" src="img/candyad/bag_party.png" alt="">
     </div></div>
@@ -792,6 +792,11 @@ document.addEventListener('DOMContentLoaded', function () {
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
         c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
+  })();
+  </script>
+  <script>
+  (function(){var s=document.getElementById('candybag');if(!s)return;
+    s.addEventListener('click',function(e){if(e.target.closest('a, .dl, button, input'))return;window.location.href='candy-bag.html';});
   })();
   </script>
 </body>

@@ -190,12 +190,12 @@
   .modeshot{margin:10px 0 12px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.07);}
   .modeshot video{display:block;width:100%;height:auto;}
   /* Candy Bag ad card: third card after Chordsmith. Candies hop in and out of the bag. */
-  .card.candyad { --g1:#ff6cb2; --g2:#ff2f88; --glow:#ff5ca8; --shadow:rgba(255,92,168,.35); border-color:#ff5ca8; background:linear-gradient(160deg,#ff6cb2,#ff4a9a 60%,#ff2f88); cursor:pointer; }
+  .card.candyad { --g1:#4cc2ff; --g2:#5b7cff; --glow:#4cc2ff; --shadow:rgba(76,194,255,.35); border-color:#4cc2ff; background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); cursor:pointer; }
   .card.candyad::before { display:none; }
-  .card.candyad .kind { color:#ffe6f2; }
-  .card.candyad h2 { background:none; -webkit-text-fill-color:#1a1420; color:#1a1420; }
+  .card.candyad .kind { color:#e6f4ff; }
+  .card.candyad h2 { background:none; -webkit-text-fill-color:#10141f; color:#10141f; }
   .card.candyad .tag { color:#fff; }
-  .card.candyad .desc { color:#ffd6e8; }
+  .card.candyad .desc { color:#dbeeff; }
   .card.candyad .pill { position:absolute; top:14px; right:14px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
   .card.candyad .stage { position:relative; margin:auto -6px 2px; padding-top:18px; aspect-ratio:1/1; overflow:hidden; }
   .card.candyad .stage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
@@ -209,10 +209,10 @@
   .card.candyad:hover .candy { animation-duration:1.2s; }
   .card.candyad .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
   @keyframes candypop { 0% { transform:translateY(0) rotate(var(--rot)); } 45% { transform:translateY(-120%) rotate(calc(var(--rot) + 360deg)) scale(1.12); } 100% { transform:translateY(0) rotate(var(--rot)); } }
-  .card.candyad .dl { background:#1a1420; color:#ff6cb2; box-shadow:0 6px 22px rgba(0,0,0,.3); }
-  .card.candyad .more { color:#ffe6f2; }
+  .card.candyad .dl { background:#10141f; color:#4cc2ff; box-shadow:0 6px 22px rgba(0,0,0,.3); }
+  .card.candyad .more { color:#e6f4ff; }
   .card.candyad .more:hover { color:#fff; }
-  .card.candyad .meta { color:#ffd6e8; }
+  .card.candyad .meta { color:#dbeeff; }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy { animation:none; } }
 </style>
 <style id="spacecss">
@@ -312,12 +312,12 @@
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
       <div class="meta">v1.7.3 · VST3 + AU instrument · macOS + Windows</div>
     </div>
-    <div class="card candyad" id="candyad" data-goto="#candybag">
+    <div class="card candyad" id="candyad" data-goto="candy-bag.html">
       <span class="pill">FREE</span>
       <div class="kind">Three free plugins</div>
       <h2>CANDY BAG</h2>
       <p class="tag">Get your sweets.</p>
-      <p class="desc">Chop, Scrap and Orbit. One zip, all three installers. Keep scrolling, the bag is waiting at the bottom.</p>
+      <p class="desc">Chop, Scrap and Orbit. One zip, all three installers. Three plugins, zero dollars.</p>
       <div class="stage" aria-hidden="true">
         <img class="bagback" src="img/candyad/bag_back.png" alt="">
         <img class="candy c1" src="img/candyad/candy_chop.png" alt="">
@@ -325,8 +325,8 @@
         <img class="candy c3" src="img/candyad/candy_orbit.png" alt="">
         <img class="bagfront" src="img/candyad/bag_front.png" alt="">
       </div>
-      <a class="dl" href="#candybag">Grab the bag &darr;</a>
-      <a class="more" href="#candybag">Free, down below &rarr;</a>
+      <a class="dl" href="candy-bag.html">Grab the bag &middot; Free</a>
+      <a class="more" href="candy-bag.html">See what is inside &rarr;</a>
       <div class="meta">Chop &middot; Scrap &middot; Orbit &middot; macOS + Windows</div>
     </div>
   </div>
@@ -779,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function () {
   (function(){var c=document.getElementById('candyad');if(!c)return;
     c.querySelectorAll('.candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
       k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
-    c.addEventListener('click',function(e){if(e.target.closest('a'))return;var t=document.querySelector('#candybag');if(t)t.scrollIntoView({behavior:'smooth',block:'center'});});
+    c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
   })();
   </script>
 </body>

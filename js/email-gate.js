@@ -96,6 +96,16 @@
       var t = setTimeout(finish, TIMEOUT_MS);
       try {
         var hp = document.getElementById("eg-hp");
+        // Library: record the free grab + send the welcome/library email (fire-and-forget, never blocks)
+        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1 };
+        if (FREE[plugin] && !(hp && hp.value)) {
+          try {
+            fetch("https://dl.sebastianmacan.com/library/free-grab", {
+              method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: email, product: plugin })
+            }).catch(function () {});
+          } catch (_) {}
+        }
         fetch(ENDPOINT, {
           method: "POST",
           keepalive: true, // survive page navigation / download start

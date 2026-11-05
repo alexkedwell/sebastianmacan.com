@@ -214,6 +214,16 @@
   .card.candyad .more:hover { color:#fff; }
   .card.candyad .meta { color:#dbeeff; }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy { animation:none; } }
+  .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
+  .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
+  .candystage .bagback { left:13%; width:74%; bottom:0; }
+  .candystage .bagfront { left:13%; width:74%; bottom:0; z-index:3; filter:drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
+  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%; cursor:pointer; }
+  .candystage .cl { left:5%; --rot:-24deg; animation-delay:.8s; }
+  .candystage .cf { left:27%; width:46%; bottom:30%; z-index:2; --rot:2deg; animation-delay:0s; }
+  .candystage .cr { left:58%; --rot:24deg; animation-delay:1.6s; }
+  .candystage .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
+  @media (prefers-reduced-motion:reduce) { .candystage .candy { animation:none; } }
 </style>
 <style id="spacecss">
   :root { --space:0; }
@@ -257,19 +267,20 @@
   .freecard .dl { margin-top:12px; font-size:13.5px; padding:10px 14px; border-radius:999px; }
   .freecard .more { margin-top:8px; }
   /* Candy Bag: the closer. Full width, all three free plugins in one zip. */
-  .candybag { margin-top:14px; border:1px solid #ff5ca8; background:var(--card); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  .candybag:hover { transform:translateY(-4px); border-color:#ff8ac4; box-shadow:0 18px 60px rgba(255,92,168,.28); }
-  .candybag img { display:block; width:100%; height:100%; object-fit:cover; }
+  .candybag { margin-top:14px; border:1px solid #4cc2ff; background:linear-gradient(160deg,#4cc2ff,#5b7cff 60%,#3d5bff); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:1.1fr 1fr; position:relative; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .candybag:hover { transform:translateY(-4px); border-color:#9fdcff; box-shadow:0 18px 60px rgba(76,194,255,.28); }
+  .candybag .stagewrap { display:flex; align-items:flex-end; justify-content:center; padding:18px 18px 0; min-height:300px; }
+  .candybag .candystage { width:min(100%, 380px); aspect-ratio:1/1; }
   .candybag .pill { position:absolute; top:14px; right:14px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
-  .candybag .binner { padding:34px 36px 32px; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(160deg,#ff6cb2,#ff4a9a 60%,#ff2f88); }
-  .candybag .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#ffe6f2; font-weight:700; }
-  .candybag h3 { margin:6px 0 8px; font-size:clamp(38px,5vw,56px); font-weight:900; letter-spacing:-.03em; line-height:.95; color:#1a1420; }
+  .candybag .binner { padding:34px 36px 32px; display:flex; flex-direction:column; justify-content:center; }
+  .candybag .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#e6f4ff; font-weight:700; }
+  .candybag h3 { margin:6px 0 8px; font-size:clamp(38px,5vw,56px); font-weight:900; letter-spacing:-.03em; line-height:.95; color:#10141f; }
   .candybag p { margin:0 0 18px; color:#fff; font-size:18px; font-weight:600; }
   .candybag .dlrow { display:flex; flex-wrap:wrap; gap:10px; }
-  .candybag .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:#1a1420; box-shadow:0 6px 22px rgba(0,0,0,.3); color:#ff6cb2; font-weight:900; text-decoration:none; }
+  .candybag .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:#10141f; box-shadow:0 6px 22px rgba(0,0,0,.3); color:#4cc2ff; font-weight:900; text-decoration:none; }
   .candybag .dl.dl-win { background:none; border:1px solid #fff; color:#fff; box-shadow:none; }
-  .candybag .inside { margin-top:16px; font-size:12.5px; color:#ffd6e8; }
-  @media (max-width:720px) { .candybag { grid-template-columns:1fr; } .candybag .binner { padding:22px 20px 24px; } }
+  .candybag .inside { margin-top:16px; font-size:12.5px; color:#dbeeff; }
+  @media (max-width:720px) { .candybag { grid-template-columns:1fr; } .candybag .stagewrap { min-height:0; padding:14px 14px 0; } .candybag .binner { padding:22px 20px 24px; } }
   @media (min-width:641px){ .card.gremlin .desc, .card.gremlin .tag, .card.gremlin .kind, .card.gremlin .meta { text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 12px rgba(5,5,14,.95), 0 0 24px rgba(5,5,14,.9); } }
 </style>
 </head>
@@ -706,7 +717,13 @@
     </div>
   </div>
   <div class="candybag" id="candybag">
-    <img src="img/bundles/candy_bag.png?v=2" alt="Candy Bag: Chop, Scrap and Orbit as wrapped candy spilling out of a striped paper bag" loading="lazy">
+    <div class="stagewrap"><div class="candystage" aria-hidden="true">
+      <img class="bagback" src="img/candyad/bag_back.png" alt="">
+      <img class="candy cl" src="img/candyad/candy_scrap.png" alt="">
+      <img class="candy cr" src="img/candyad/candy_orbit.png" alt="">
+      <img class="candy cf" src="img/candyad/candy_chop.png" alt="">
+      <img class="bagfront" src="img/candyad/bag_front.png" alt="">
+    </div></div>
     <div class="binner">
       <span class="pill">FREE</span>
       <div class="kind">Three free plugins</div>
@@ -781,6 +798,10 @@ document.addEventListener('DOMContentLoaded', function () {
       k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
     c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
   })();
+  </script>
+  <script>
+  document.querySelectorAll('.candystage .candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
+    k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
   </script>
 </body>
 </html>

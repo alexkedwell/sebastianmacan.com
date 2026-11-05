@@ -207,8 +207,6 @@
   .card.candyad .c3 { left:58%; animation-delay:1.6s; --rot:24deg; }
   @keyframes candyhop { 0%,100% { transform:translateY(0) rotate(var(--rot)); } 50% { transform:translateY(-42%) rotate(calc(var(--rot) + 10deg)); } }
   .card.candyad:hover .candy { animation-duration:1.2s; }
-  .card.candyad .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
-  @keyframes candypop { 0% { transform:translateY(0) rotate(var(--rot)); } 45% { transform:translateY(-120%) rotate(calc(var(--rot) + 360deg)) scale(1.12); } 100% { transform:translateY(0) rotate(var(--rot)); } }
   .card.candyad .dl { background:#10141f; color:#4cc2ff; box-shadow:0 6px 22px rgba(0,0,0,.3); }
   .card.candyad .more { color:#e6f4ff; }
   .card.candyad .more:hover { color:#fff; }
@@ -218,11 +216,10 @@
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
   .candystage .bagback { left:13%; width:74%; bottom:0; }
   .candystage .bagfront { left:13%; width:74%; bottom:0; z-index:3; filter:drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
-  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%; cursor:pointer; }
+  .candystage .candy { width:38%; bottom:36%; z-index:1; animation:candyhop 2.4s ease-in-out infinite; transform-origin:50% 60%; }
   .candystage .cl { left:5%; --rot:-24deg; animation-delay:.8s; }
   .candystage .cf { left:27%; width:46%; bottom:30%; z-index:2; --rot:2deg; animation-delay:0s; }
   .candystage .cr { left:58%; --rot:24deg; animation-delay:1.6s; }
-  .candystage .candy.pop { animation:candypop .9s cubic-bezier(.2,.9,.3,1.2) 1; z-index:4; }
   @media (prefers-reduced-motion:reduce) { .candystage .candy { animation:none; } }
 </style>
 <style id="spacecss">
@@ -331,8 +328,8 @@
       <p class="desc">Chop, Scrap and Orbit. One zip, all three installers. Three plugins, zero dollars.</p>
       <div class="stage" aria-hidden="true">
         <img class="bagback" src="img/candyad/bag_back.png" alt="">
-        <img class="candy c1" src="img/candyad/candy_scrap.png" alt="">
-        <img class="candy c2" src="img/candyad/candy_chop.png" alt="">
+        <img class="candy c1" src="img/candyad/candy_chop.png" alt="">
+        <img class="candy c2" src="img/candyad/candy_scrap.png" alt="">
         <img class="candy c3" src="img/candyad/candy_orbit.png" alt="">
         <img class="bagfront" src="img/candyad/bag_front.png" alt="">
       </div>
@@ -794,14 +791,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="js/spacewarp.js?v=5"></script>
   <script>
   (function(){var c=document.getElementById('candyad');if(!c)return;
-    c.querySelectorAll('.candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
-      k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
-    c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
+        c.addEventListener('click',function(e){if(e.target.closest('a'))return;window.location.href='candy-bag.html';});
   })();
-  </script>
-  <script>
-  document.querySelectorAll('.candystage .candy').forEach(function(k){k.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();k.classList.remove('pop');void k.offsetWidth;k.classList.add('pop');});
-    k.addEventListener('animationend',function(e){if(e.animationName==='candypop')k.classList.remove('pop');});});
   </script>
 </body>
 </html>

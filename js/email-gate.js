@@ -97,7 +97,7 @@
       try {
         var hp = document.getElementById("eg-hp");
         // Library: record the free grab + send the welcome/library email (fire-and-forget, never blocks)
-        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1 };
+        var FREE = { candybag: 1, chop: 1, scrap: 1, orbit: 1, jelly: 1, warble: 1 };
         if (FREE[plugin] && !(hp && hp.value)) {
           try {
             fetch("https://dl.sebastianmacan.com/library/free-grab", {

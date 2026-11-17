@@ -924,17 +924,31 @@ document.querySelectorAll('.feat .dl[data-dl]').forEach(function(btn){
 <script>
 // Play only videos that are on screen. Phones cap simultaneous video playback,
 // so without this some cards freeze on their poster frame.
+// The browser can also pause them by itself (switching tabs or apps, coming back
+// to the page, iPhone Low Power Mode), so anything on screen is restarted when
+// the page is shown again and on the next touch, click or scroll.
 document.addEventListener('DOMContentLoaded', function () {
   var vids = document.querySelectorAll('video');
   if (!('IntersectionObserver' in window)) return;
+  function start(v) { if (v.paused) { var p = v.play(); if (p) p.catch(function(){}); } }
+  function resume() { if (document.hidden) return; vids.forEach(function (v) { if (v._onscreen) start(v); }); }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       var v = e.target;
-      if (e.isIntersecting) { var p = v.play(); if (p) p.catch(function(){}); }
+      v._onscreen = e.isIntersecting;
+      if (e.isIntersecting) { start(v); }
       else { v.pause(); }
     });
   }, { rootMargin: '100px 0px' });
   vids.forEach(function (v) { io.observe(v); });
+  var tick = 0;
+  function soon() { if (tick) return; tick = setTimeout(function () { tick = 0; resume(); }, 150); }
+  document.addEventListener('visibilitychange', resume);
+  window.addEventListener('pageshow', resume);
+  window.addEventListener('focus', resume);
+  window.addEventListener('scroll', soon, { passive: true });
+  document.addEventListener('touchend', resume, { passive: true });
+  document.addEventListener('click', resume);
 });
 </script>
 <script src="js/madewith.js?v=r1101"></script>

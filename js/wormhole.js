@@ -120,8 +120,11 @@
     var arrived = false;
     try { var v = +sessionStorage.getItem(KEY); arrived = v && Date.now() - v < 8000; sessionStorage.removeItem(KEY); } catch (_) {}
     if (REDUCED) arrived = false;
+    var GALAXY = document.body.hasAttribute('data-galaxy');     /* js/galaxy.js owns the background: we only do the arrival */
+    if (GALAXY && !arrived) return;
     var c = makeCanvas(0, true), ctx = c.getContext('2d'), W, H;
-    document.body.insertBefore(c, document.body.firstChild);
+    var gx = document.getElementById('sm-galaxy');
+    document.body.insertBefore(c, gx ? gx.nextSibling : document.body.firstChild);
     var stars = makeStars(Math.round(Math.min(700, 260 + window.innerWidth * window.innerHeight / 4200)));
     function size() { fit(c); W = c.width; H = c.height; ctx.fillStyle = '#080516'; ctx.fillRect(0, 0, W, H); }
     size(); window.addEventListener('resize', size);
@@ -140,6 +143,10 @@
       if (b > 0.02) drawRings(ctx, W, H, now / 1000, b * 0.8, W / 2, H * 0.42);
       if (flash) { flash.style.opacity = String(Math.pow(1 - ease(t / 0.45), 1.5)); if (t >= 0.45) { flash.remove(); flash = null; } }
       if (REDUCED) return;
+      if (GALAXY && t > 0.55) {                                   /* braking done: melt into the candy galaxy */
+        var o = 1 - (t - 0.55) / 0.45; c.style.opacity = String(Math.max(0, o));
+        if (t >= 1) { c.remove(); return; }
+      }
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);

@@ -71,7 +71,7 @@ CARD = f'''    <div class="card ghost">
       <span class="new">NEW</span>
       <div class="kind">Granular Texture Machine</div>
       <h2 style="background:{GRAD};-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GHOST</h2>
-      <p class="tag">Freeze sound. Then haunt it.</p>
+      <p class="tag">Your sound has unfinished business.</p>
       <p class="desc">Grabs the last four seconds of whatever you played and refuses to let it move on. Very unhealthy. Sounds incredible.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png?v={V}"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4?v={V}" type="video/mp4"></video></div>
       <span class="dl buy" style="background:{GRAD};box-shadow:0 6px 28px rgba(0,229,255,.26);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; ${USD}</span>

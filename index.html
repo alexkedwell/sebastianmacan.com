@@ -248,22 +248,23 @@
   .card.gremlinad.full .pill { z-index:2; border-color:#fff; color:#fff; }
   .card.gremlinad.full .golink { position:absolute; inset:0; z-index:3; }
   @media (max-width:705px) { .card.gremlinad.full { justify-self:center; } }
-  /* Featured lane: banners, same build as the Candy Bag closer. Stage keeps the loop's own 7:5 shape so nothing is cropped. */
-  .featbanner { margin-top:16px; border:1px solid var(--g1); background:linear-gradient(160deg,var(--g1),var(--gm) 55%,var(--g2)); border-radius:18px; overflow:hidden; display:grid; grid-template-columns:minmax(0,448px) 1fr; position:relative; cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-  .featbanner.gremlinad { --g1:#ff8ad8; --gm:#b9a4f0; --g2:#6ec8ff; --ink:#14121c; --soft:#3a2a52; --shadow:rgba(255,138,216,.28); }
-  .featbanner:hover { transform:translateY(-4px); box-shadow:0 18px 60px var(--shadow); }
-  .featbanner .stage { aspect-ratio:7/5; overflow:hidden; background:#140a2c; position:relative; }
-  @media (min-width:721px) { .featbanner .stage { aspect-ratio:auto; min-height:320px; height:100%; } .featbanner .stage video { position:absolute; inset:0; } }
-  .featbanner .stage video { display:block; width:100%; height:100%; object-fit:cover; }
-  .featbanner .pill { position:absolute; top:14px; right:14px; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid var(--ink); color:var(--ink); }
-  .featbanner .binner { padding:28px 36px; display:flex; flex-direction:column; justify-content:center; }
-  .featbanner .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); font-weight:700; }
-  .featbanner h3 { margin:6px 0 8px; font-size:clamp(34px,4.4vw,52px); font-weight:900; letter-spacing:-.03em; line-height:.95; color:var(--ink); }
-  .featbanner p { margin:0 0 18px; color:var(--ink); font-size:18px; font-weight:600; }
+  /* Featured lane: banners. The video IS the banner (saucers in the candy galaxy); words sit on top of it.
+     Wide cut 1600x456: saucers own the left 40% of the picture, so the words start past that. Tall cut (phones) 720x1280: saucers own the top. */
+  .featbanner { margin-top:16px; border:1px solid rgba(255,138,216,.55); background:#0a0622; border-radius:18px; overflow:hidden; position:relative; cursor:pointer; height:322px; display:flex; align-items:center; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .featbanner.gremlinad { --g1:#ff8ad8; --g2:#6ec8ff; --ink:#14121c; --shadow:rgba(255,138,216,.28); }
+  .featbanner:hover { transform:translateY(-4px); border-color:var(--g1); box-shadow:0 18px 60px var(--shadow); }
+  .featbanner .stage { position:absolute; inset:0; }
+  .featbanner .stage video { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:left center; }
+  .featbanner .stage .vtall { display:none; }
+  .featbanner .pill { position:absolute; top:14px; right:14px; z-index:2; font-size:10px; font-weight:800; letter-spacing:.12em; padding:4px 9px; border-radius:999px; border:1px solid #fff; color:#fff; }
+  .featbanner .binner { position:relative; z-index:1; margin-left:max(41%,456px); padding:18px 28px 18px 0; display:flex; flex-direction:column; justify-content:center; text-shadow:0 1px 10px rgba(8,5,22,.9); }
+  .featbanner .kind { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#d9c8ff; font-weight:700; }
+  .featbanner h3 { margin:6px 0 8px; font-size:clamp(30px,4.4vw,52px); font-weight:900; letter-spacing:-.03em; line-height:.95; background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow:none; filter:drop-shadow(0 2px 10px rgba(8,5,22,.85)); }
+  .featbanner p { margin:0 0 18px; color:#fff; font-size:18px; font-weight:600; }
   .featbanner .dlrow { display:flex; flex-wrap:wrap; gap:10px; }
-  .featbanner .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:var(--ink); box-shadow:0 6px 22px rgba(0,0,0,.3); color:var(--g1); font-weight:900; text-decoration:none; }
-  .featbanner .inside { margin-top:16px; font-size:12.5px; color:var(--soft); }
-  @media (max-width:720px) { .featbanner { grid-template-columns:1fr; } .featbanner .binner { padding:22px 20px 24px; } .featbanner .pill { border-color:#fff; color:#fff; z-index:2; } }
+  .featbanner .dl { font-size:14px; padding:12px 20px; border-radius:999px; background:linear-gradient(135deg,var(--g1),var(--g2)); box-shadow:0 6px 22px rgba(0,0,0,.45); color:var(--ink); font-weight:900; text-decoration:none; text-shadow:none; }
+  .featbanner .inside { margin-top:16px; font-size:12.5px; color:#d9c8ff; }
+  @media (max-width:720px) { .featbanner { height:auto; display:block; padding-top:74%; } .featbanner .stage .vwide { display:none; } .featbanner .stage .vtall { display:block; object-position:center top; } .featbanner .binner { margin-left:0; padding:0 20px 24px; } }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
@@ -765,9 +766,9 @@
 
   <div class="sect-title" id="featured">Featured · Limited Time</div>
   <div class="featbanner gremlinad" id="gremlinad" data-goto="basket-gremlin.html" data-warp="basket-gremlin.html">
-    <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/shop.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_shop.mp4?v=1" type="video/mp4"></video></div>
+    <div class="stage" aria-hidden="true"><video class="vwide" autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/banner_wide.jpg?v=2"><source src="https://video.sebastianmacan.com/img/video/gremlin_banner_wide.mp4?v=2" type="video/mp4"></video><video class="vtall" autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/banner_tall.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_banner_tall.mp4?v=1" type="video/mp4"></video></div>
+    <span class="pill">CLICK</span>
     <div class="binner">
-      <span class="pill">CLICK</span>
       <div class="kind">Five gremlins, one basket</div>
       <h3>GREMLIN BASKET</h3>
       <p>Do not feed them after midnight.</p>

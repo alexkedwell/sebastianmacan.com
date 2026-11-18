@@ -237,6 +237,16 @@
   .card.gremlinad .more { color:#3a2a52; }
   .card.gremlinad .more:hover { color:#14121c; }
   .card.gremlinad .meta { color:#3a2a52; }
+  /* Nov 18: the saucer loop is the whole card. In a row it stretches to its neighbours' height; alone it keeps the video's tall shape (the ::after spacer) */
+  .card.gremlinad.full { padding:0; width:100%; max-width:440px; background:#140a2c; }
+  .card.gremlinad.full::after { content:""; display:block; padding-top:206%; }
+  .card.gremlinad.full .stage { position:absolute; inset:0; margin:0; aspect-ratio:auto; border-radius:0; box-shadow:none; }
+  .card.gremlinad.full .stage video { transition:transform .5s ease; }
+  .card.gremlinad.full:hover .stage video { transform:scale(1.04); }
+  .card.gremlinad.full .kind { position:absolute; left:26px; top:28px; margin:0; z-index:2; color:#fff; text-shadow:0 1px 8px rgba(10,6,34,.8); }
+  .card.gremlinad.full .pill { z-index:2; border-color:#fff; color:#fff; }
+  .card.gremlinad.full .golink { position:absolute; inset:0; z-index:3; }
+  @media (max-width:705px) { .card.gremlinad.full { justify-self:center; } }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }
@@ -453,16 +463,11 @@
       <a class="more" href="chordsmith.html">See how it works &rarr;</a>
       <div class="meta">v1.7.3 · VST3 + AU instrument · macOS + Windows</div>
     </div>
-    <div class="card gremlinad" id="gremlinad" data-goto="basket-gremlin.html">
+    <div class="card gremlinad full" id="gremlinad" data-goto="basket-gremlin.html">
+      <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/fullcard.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_fullcard.mp4?v=1" type="video/mp4"></video></div>
       <span class="pill">BASKET</span>
       <div class="kind">Five gremlins, one basket</div>
-      <h2>GREMLIN BASKET</h2>
-      <p class="tag">Do not feed them after midnight.</p>
-      <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone.</p>
-      <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/saucers.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_card.mp4?v=1" type="video/mp4"></video></div>
-      <span class="dl" role="button" tabindex="0" data-cart-add="gremlinbasket">Add to cart &middot; $35</span>
-      <a class="more" href="basket-gremlin.html">See what is inside &rarr;</a>
-      <div class="meta">Smear &middot; Stutter &middot; Twitch &middot; Chop &middot; Scrap &middot; macOS + Windows</div>
+      <a class="golink" href="basket-gremlin.html" aria-label="Gremlin Basket: open the basket"></a>
     </div>
   </div>
 

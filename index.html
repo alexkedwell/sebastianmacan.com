@@ -248,6 +248,12 @@
   .card.gremlinad.full .pill { z-index:2; border-color:#fff; color:#fff; }
   .card.gremlinad.full .golink { position:absolute; inset:0; z-index:3; }
   @media (max-width:705px) { .card.gremlinad.full { justify-self:center; } }
+  /* Featured lane: ad cards are small on desktop */
+  @media (min-width:706px) {
+    .featgrid .card.gremlinad.full { max-width:220px; border-radius:16px; }
+    .featgrid .card.gremlinad.full .kind { left:14px; top:14px; right:72px; font-size:10px; line-height:1.35; }
+    .featgrid .card.gremlinad.full .pill { top:12px; right:12px; font-size:9px; padding:3px 8px; }
+  }
   @media (prefers-reduced-motion:reduce) { .card.candyad .candy, .card.candyad .toy, .card.candyad .balloon { animation:none; } }
   .candystage { position:relative; aspect-ratio:1/1; overflow:hidden; }
   .candystage img { position:absolute; display:block; user-select:none; -webkit-user-drag:none; }

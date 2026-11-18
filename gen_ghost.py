@@ -89,13 +89,13 @@ def card_in(path, demo_tree):
             a = s.index('<div class="card ghost">'); b = s.index('<div class="card ', a + 10); s = s[:a] + s[b:]
         else:
             pk = '  .pocket { --g1:#4f97e8;'; s = rep(s, pk, CSS + pk)
-        s = rep(s, anchor, anchor + CARD)
+        a = s.index('    <div class="card smear">'); b = s.index('\n    </div>\n', a) + 12; s = s[:b] + CARD + s[b:]   # right after Smear (Alex, Nov 18)
         s = rep(s, '13 Plugins + 11 MIDI Packs', '14 Plugins + 11 MIDI Packs', 4)
         s = rep(s, 'Thirteen plugins and 4796', 'Fourteen plugins and 4796')
     else:   # re-run: refresh the card (platform line)
         import re as _re; s = _re.sub(r'  \.ghost \{ --g1:[^\n]*\n', CSS, s)
-        a = s.index('    <div class="card ghost">'); b = s.index('    <div class="card ', a + 10); s = s[:a] + CARD + s[b:]
-    assert s.count('class="card ghost"') == 1 and s.count('.ghost { --g1') == 1
+        a = s.index('    <div class="card ghost">'); b = s.index('\n    </div>\n', a) + 12; s = s[:a] + CARD + s[b:]
+    assert s.count('    <div class="card ghost">') == 1 and s.count('.ghost { --g1') >= 1   # demo's sync keeps an older second rule
     open(path, 'w').write(s)
 card_in(S + '/index.html', False); card_in(D + '/index.html', True)
 

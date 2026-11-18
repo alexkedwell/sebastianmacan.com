@@ -250,7 +250,8 @@
   @media (max-width:705px) { .card.gremlinad.full { justify-self:center; } }
   /* Featured lane: ad cards are small on desktop */
   @media (min-width:706px) {
-    .featgrid .card.gremlinad.full { max-width:220px; border-radius:16px; }
+    .featgrid .card.gremlinad.full { max-width:290px; border-radius:16px; }
+    .featgrid .card.gremlinad.full::after { padding-top:155%; }
     .featgrid .card.gremlinad.full .kind { left:14px; top:14px; right:72px; font-size:10px; line-height:1.35; }
     .featgrid .card.gremlinad.full .pill { top:12px; right:12px; font-size:9px; padding:3px 8px; }
   }

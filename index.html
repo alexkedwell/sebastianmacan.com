@@ -233,6 +233,8 @@
   .card.gremlinad .stage { position:relative; margin:auto -6px 2px; aspect-ratio:1/1; overflow:hidden; border-radius:14px; box-shadow:0 10px 30px rgba(20,18,28,.35); }
   .card.gremlinad .stage video { display:block; width:100%; height:100%; object-fit:cover; }
   .card.gremlinad > .desc { margin-bottom:16px; }
+  /* in the basket row: the wide cut of the scene (7:5, the same shape as the other baskets' pictures), so no gremlin is cropped */
+  .bundlegrid .card.gremlinad .stage { aspect-ratio:7/5; margin-top:auto; margin-bottom:auto; }
   .card.gremlinad .dl { background:#14121c; color:#ff8ad8; box-shadow:0 6px 22px rgba(0,0,0,.3); cursor:pointer; }
   .card.gremlinad .more { color:#3a2a52; }
   .card.gremlinad .more:hover { color:#14121c; }
@@ -524,17 +526,6 @@
       <a class="more" href="chop.html">See how it works &rarr;</a>
       <div class="meta">v1.1.3 · VST3 + AU effect · macOS + Windows</div>
     </div>
-    <div class="card gremlinad" id="gremlinad" data-goto="basket-gremlin.html">
-      <span class="pill">BASKET</span>
-      <div class="kind">Five gremlins, one basket</div>
-      <h2>GREMLIN BASKET</h2>
-      <p class="tag">Do not feed them after midnight.</p>
-      <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone.</p>
-      <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/saucers.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_card.mp4?v=1" type="video/mp4"></video></div>
-      <span class="dl" role="button" tabindex="0" data-cart-add="gremlinbasket">Add to cart &middot; $35</span>
-      <a class="more" href="basket-gremlin.html">See what is inside &rarr;</a>
-      <div class="meta">Smear &middot; Stutter &middot; Twitch &middot; Chop &middot; Scrap &middot; macOS + Windows</div>
-    </div>
     <div class="card warble">
       <span class="new">NEW</span>
       <div class="kind">Free Drunk Songbird Wobbler</div>
@@ -777,16 +768,17 @@
         <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="studiobasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="studiobasket">Buy Now</span></div>
       </div>
     </a>
-    <a class="bundle gremlin-b" href="basket-gremlin.html">
-      <img src="img/bundles/gremlin_bundle.png?v=8" alt="Gremlin Basket: Smear, Stutter, Twitch, Chop and Scrap as wrapped candy in a basket" loading="lazy">
-      <div class="binner">
-        <h3>GREMLIN BASKET</h3>
-        <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone. Do not feed them after midnight.</p>
-        <div class="price">$35</div>
-        <span class="dl bopen" style="background:linear-gradient(135deg,#ff8ad8,#6ec8ff);">Open the basket</span>
-        <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="gremlinbasket">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="gremlinbasket">Buy Now</span></div>
-      </div>
-    </a>
+    <div class="card gremlinad" id="gremlinad" data-goto="basket-gremlin.html">
+      <span class="pill">BASKET</span>
+      <div class="kind">Five gremlins, one basket</div>
+      <h2>GREMLIN BASKET</h2>
+      <p class="tag">Do not feed them after midnight.</p>
+      <p class="desc">Smear, Stutter, Twitch, Chop and Scrap. Five little troublemakers who will not leave your sound alone.</p>
+      <div class="stage" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="img/gremlinad/shop.jpg?v=1"><source src="https://video.sebastianmacan.com/img/video/gremlin_saucers_shop.mp4?v=1" type="video/mp4"></video></div>
+      <span class="dl" role="button" tabindex="0" data-cart-add="gremlinbasket">Add to cart &middot; $35</span>
+      <a class="more" href="basket-gremlin.html">See what is inside &rarr;</a>
+      <div class="meta">Smear &middot; Stutter &middot; Twitch &middot; Chop &middot; Scrap &middot; macOS + Windows</div>
+    </div>
     <a class="bundle chord-b" href="basket-chord.html">
       <img src="img/bundles/chord_bundle.png" alt="Chord Basket: Chordsmith and every MIDI pack as wrapped candy in a basket" loading="lazy">
       <div class="binner">

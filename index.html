@@ -196,6 +196,7 @@
     nav{max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px 6px;}
     nav::-webkit-scrollbar{display:none;}
     nav a { margin:0 10px; display:inline-block; }
+  nav { display:flex; } nav a, nav #smcart-tab { flex:0 0 auto; } nav a.libnav { order:-1; }
     .hero { padding:40px 0 20px; }
     .grid { grid-template-columns:1fr; }
     footer { flex-direction:column; text-align:center; }
@@ -453,7 +454,7 @@
 <div class="wrap">
   <header>
     <div class="logo">SEBASTIAN<span>MACAN</span></div>
-    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#featured">Featured</a><a href="#bundles">Bundles</a><a href="#free">Free</a></nav>
+    <nav><a href="#effects">Effects</a><a href="#instruments">Instruments</a><a href="#studio">Studio</a><a href="#midi">MIDI</a><a href="#modes">Modes</a><a href="#featured">Featured</a><a href="#bundles">Bundles</a><a href="#free">Free</a><a class="libnav" href="https://dl.sebastianmacan.com/library">Library</a></nav>
   </header>
 
   <section class="hero">
@@ -1014,7 +1015,7 @@
 </div>
 <script src="js/cart.js?v=free8" defer></script>
 <script src="js/os-dl.js?v=1" defer></script>
-<script src="js/email-gate.js?v=lib2" defer></script>
+<script src="js/email-gate.js?v=lib3" defer></script>
 <script>
 // Whole plugin card is clickable -> its "See how it works" page.
 // Real links/buttons inside the card (Download, See how it works) keep working normally.

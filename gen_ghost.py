@@ -65,8 +65,8 @@ for f in ('ghost_seed31973.m4a', 'ghost_seed31973_first_take.m4a'): shutil.copy(
 print('ghost.html', len(h), 'bytes; platforms:', PLAT)
 
 # ---------- home card ----------
-CSS = "  .ghost { --g1:#00e5ff; --g2:#005f80; --glow:#00e5ff; --shadow:rgba(0,229,255,.18); }\n"
-GRAD = 'linear-gradient(135deg,#00e5ff,#005f80)'
+CSS = "  .ghost { --g1:#9be7ff; --g2:#895fff; --glow:#895fff; --shadow:rgba(137,95,255,.24); }\n  .ghost .new, .ghost .cartbtn.buy { background:linear-gradient(135deg,#9be7ff,#00e5ff 45%,#895fff); }\n  .ghost .dl.buy, .ghost .cartbtn.buy { color:#0a0a12; }\n"
+GRAD = 'linear-gradient(135deg,#9be7ff,#00e5ff 45%,#895fff)'
 CARD = f'''    <div class="card ghost">
       <span class="new">NEW</span>
       <div class="kind">Granular Texture Machine</div>
@@ -74,7 +74,7 @@ CARD = f'''    <div class="card ghost">
       <p class="tag">Your sound has unfinished business.</p>
       <p class="desc">Grabs the last four seconds of whatever you played and refuses to let it move on. Very unhealthy. Sounds incredible.</p>
       <div class="shot"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/ghost.png?v={V}"><source src="https://video.sebastianmacan.com/img/video/ghost_ui_loop.mp4?v={V}" type="video/mp4"></video></div>
-      <span class="dl buy" style="background:{GRAD};box-shadow:0 6px 28px rgba(0,229,255,.18);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; ${USD}</span>
+      <span class="dl buy" style="background:{GRAD};box-shadow:0 6px 28px rgba(137,95,255,.24);" role="button" tabindex="0" data-cart-buy="ghost">Buy Ghost &middot; ${USD}</span>
       <div class="cartrow"><span class="cartbtn add" role="button" tabindex="0" data-cart-add="ghost">Add to Cart</span><span class="cartbtn buy" role="button" tabindex="0" data-cart-buy="ghost">Buy Now</span></div>
       <a class="more" href="ghost.html">See how it works &rarr;</a>
       <div class="meta">v{V} · VST3 + AU effect · {PLAT}</div>
@@ -93,7 +93,7 @@ def card_in(path, demo_tree):
         s = rep(s, '13 Plugins + 11 MIDI Packs', '14 Plugins + 11 MIDI Packs', 4)
         s = rep(s, 'Thirteen plugins and 4796', 'Fourteen plugins and 4796')
     else:   # re-run: refresh the card (platform line)
-        import re as _re; s = _re.sub(r'  \.ghost \{ --g1:[^\n]*\n', CSS, s)
+        import re as _re; s = _re.sub(r'  \.ghost \{ --g1:[^\n]*\n(?:  \.ghost \.[^\n]*\n)*', lambda _m: CSS, s, count=1)
         a = s.index('    <div class="card ghost">'); b = s.index('\n    </div>\n', a) + 12; s = s[:a] + CARD + s[b:]
     assert s.count('    <div class="card ghost">') == 1 and s.count('.ghost { --g1') >= 1   # demo's sync keeps an older second rule
     open(path, 'w').write(s)

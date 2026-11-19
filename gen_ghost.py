@@ -65,9 +65,11 @@ for f in ('ghost_seed31973.m4a', 'ghost_seed31973_first_take.m4a'): shutil.copy(
 print('ghost.html', len(h), 'bytes; platforms:', PLAT)
 
 # ---------- home card ----------
-CSS = "  .ghost { --g1:#7c4dff; --g2:#7c4dff; --glow:#7c4dff; --shadow:rgba(124,77,255,.225); }\n  .ghost .new, .ghost .dl.buy, .ghost .cartbtn.buy { background:#141826; border:1.5px solid #7c4dff; }\n  .ghost .new { color:#b9a2ff; }\n  .ghost .dl.buy, .ghost .cartbtn.buy { color:#d9ccff; }\n"
+CSS = "  .ghost { --g1:#7c4dff; --g2:#7c4dff; --glow:#7c4dff; --shadow:rgba(124,77,255,.225); }\n  .ghost .new, .ghost .dl.buy, .ghost .cartbtn.buy { background:#141826; border:1.5px solid #7c4dff; }\n  .ghost .new { color:#b9a2ff; }\n  .ghost .dl.buy, .ghost .cartbtn.buy { color:#d9ccff; }\n  .ghost .gfog { position:absolute; inset:0; pointer-events:none; z-index:0; }\n  .ghost .gfog ~ *:not(.new) { position:relative; z-index:1; }\n  .ghost .gfog ~ .new { z-index:2; }\n"
+FOG = open(S + '/_tpl/ghost_card_fog.html', encoding='utf-8').read().strip()   # Astra's "A Quiet Visitor" (Alex, Nov 19)
 GRAD = 'linear-gradient(#e8f6ff,#e8f6ff)'
 CARD = f'''    <div class="card ghost">
+      {FOG}
       <span class="new">NEW</span>
       <div class="kind">Haunted Tape Texture Machine</div>
       <h2 style="background:{GRAD};-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">GHOST</h2>

@@ -1,6 +1,6 @@
 /* os-dl.js — one download button per plugin.
- * Buttons carry data-mac / data-win. The main button serves the visitor's own system,
- * the small link under it (data-alt) offers the other one.
+ * Buttons carry data-mac / data-win. The button serves the visitor's own system.
+ * The other system's installer is in the welcome email and in the library.
  * Default (Mac, phones, anything unknown) = the Mac installer, exactly what the HTML already says.
  * Runs before email-gate.js reads the href on click, so the gate hands out the right file. */
 (function () {

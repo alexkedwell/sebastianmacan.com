@@ -63,7 +63,6 @@ body = f'''  <section class="hero">
     <div class="videobox"><video autoplay muted loop playsinline preload="metadata" poster="img/ui/chop.png?v={VER}" aria-label="Chop plugin UI: a green chomper mascot biting on the beat while the knobs move"><source src="https://video.sebastianmacan.com/img/video/chop_ui_loop.mp4?v={VER}" type="video/mp4"></video></div>
     <div class="cta">
       <a class="dl" href="{MAC}" data-mac="{MAC}" data-win="{WIN}">Download Chop Free</a>
-      <a class="dl dl-alt" href="{WIN}" data-mac="{MAC}" data-win="{WIN}" data-alt="1">Windows version</a>
       <div class="meta">v{VER} &middot; VST3 + AU effect &middot; macOS + Windows &middot; 100% free</div>
     </div>
   </section>
@@ -104,7 +103,6 @@ body = f'''  <section class="hero">
 
   <div class="cta">
     <a class="dl" href="{MAC}" data-mac="{MAC}" data-win="{WIN}">Download Chop Free</a>
-    <a class="dl dl-alt" href="{WIN}" data-mac="{MAC}" data-win="{WIN}" data-alt="1">Windows version</a>
     <div class="meta">Email required &middot; instant download</div>
   </div>
 

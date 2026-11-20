@@ -213,7 +213,7 @@
       '<button class="eg-close" aria-label="Close">&times;</button>' +
       '<div class="eg-kind">Downloading</div>' +
       '<h3 class="eg-title"><em>' + name + '</em> is in your library</h3>' +
-      '<p class="eg-sub">Your library is tied to <span class="eg-mail"></span>. Everything you download is kept there, ready to download again any time. To open it, enter your email and we send you a sign-in code. No password.</p>' +
+      '<p class="eg-sub">Your library is tied to <span class="eg-mail"></span>. Everything you download is kept there, ready to download again any time. To open it, enter your email and we send you a sign-in code.</p>' +
       '<a class="eg-lib" href="https://dl.sebastianmacan.com/library" target="_blank" rel="noopener">Open my library</a>' +
       '<div class="eg-row"><button class="eg-skip eg-other" type="button">Use a different email</button><button class="eg-skip eg-ok" type="button">Done</button></div>' +
       "</div>";
